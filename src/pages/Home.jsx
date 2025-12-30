@@ -125,8 +125,19 @@ const Home = () => {
             Interested in collaborating or have a question? Feel free to reach out!
           </p>
           <div className="d-flex justify-content-center gap-3">
-            <Button variant="primary" size="lg" href="mailto:pepper.pancoast@example.com">Email Me</Button>
-            <Button variant="outline-dark" size="lg" href="https://linkedin.com/in/pepperpancoast" target="_blank" rel="noopener noreferrer">LinkedIn</Button>
+            <Button variant="primary" size="lg" href={`mailto:${resumeData.basics.email}`}>Email Me</Button>
+            {resumeData.basics.profiles.map((profile, index) => (
+              <Button 
+                key={index}
+                variant="outline-dark" 
+                size="lg" 
+                href={profile.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {profile.network}
+              </Button>
+            ))}
           </div>
         </Container>
       </section>
