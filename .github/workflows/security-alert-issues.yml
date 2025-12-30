@@ -1,44 +1,83 @@
-name: Create Issue on Security Alert
+name: Scan and Create Issues for Security Alerts
 
 on:
-  repository_vulnerability_alert:
-    types: [create]
+  workflow_dispatch: # Allow manual trigger
+  schedule:
+    - cron: '0 8 * * *' # Run daily at 8:00 AM UTC
 
 permissions:
+  dependabot_alerts: read
   issues: write
 
 jobs:
-  create-issue:
+  scan-and-report:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Issue
+      - name: Check Alerts and Create Issues
         uses: actions/github-script@v7
         with:
           script: |
-            const alert = context.payload.alert;
-            const packageName = alert.affected_package_name;
-            const severity = alert.severity;
-            const ghsaId = alert.ghsa_id;
-            const alertUrl = alert.external_reference || `https://github.com/${context.repo.owner}/${context.repo.repo}/network/alert/${alert.number}`;
+            // 1. Fetch all open Dependabot alerts
+            // Note: This API endpoint is available for repositories with Dependabot enabled
+            try {
+              const alerts = await github.paginate(github.rest.dependabot.listAlertsForRepo, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                severity: 'critical,high,medium' // You can adjust this filter
+              });
 
-            const title = `Security Alert: ${packageName} (${severity})`;
-            const body = `
-            # Security Alert Detected
-            
-            **Package:** ${packageName}
-            **Severity:** ${severity}
-            **GHSA ID:** ${ghsaId}
-            
-            ## Description
-            A new security vulnerability has been detected in your dependencies.
-            
-            [View Alert Details](${alertUrl})
-            `;
-            
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: title,
-              body: body,
-              labels: ['security', 'dependabot']
-            });
+              console.log(`Found ${alerts.length} open alerts.`);
+
+              if (alerts.length === 0) return;
+
+              // 2. Fetch existing issues to avoid duplicates
+              const existingIssues = await github.paginate(github.rest.issues.listForRepo, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all', // Check both open and closed issues
+                labels: 'security,dependabot',
+                per_page: 100
+              });
+
+              const existingTitles = new Set(existingIssues.map(issue => issue.title));
+
+              // 3. Process alerts
+              for (const alert of alerts) {
+                const packageName = alert.security_vulnerability.package.name;
+                const severity = alert.security_vulnerability.severity;
+                const title = `Security Alert: ${packageName} (${severity})`;
+
+                if (existingTitles.has(title)) {
+                  console.log(`Issue already exists for: ${title}`);
+                  continue;
+                }
+
+                // Create new issue
+                console.log(`Creating issue for: ${title}`);
+                const body = `
+                # Security Alert Detected
+                
+                **Package:** ${packageName}
+                **Severity:** ${severity}
+                **Ecosystem:** ${alert.security_vulnerability.package.ecosystem}
+                **Created:** ${alert.created_at}
+                
+                ## Description
+                ${alert.security_advisory.description}
+                
+                [View Alert Details](${alert.html_url})
+                `;
+
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: title,
+                  body: body,
+                  labels: ['security', 'dependabot']
+                });
+              }
+            } catch (error) {
+              console.log("Error fetching alerts. Ensure Dependabot alerts are enabled for this repository.");
+              console.log(error);
+            }
