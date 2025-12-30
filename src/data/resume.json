@@ -1,0 +1,65 @@
+{
+  "basics": {
+    "name": "Pepper Pancoast",
+    "label": "Engineering Executive & Technology Strategist",
+    "email": "pepper@example.com",
+    "phone": "",
+    "url": "https://drtootsie.github.io",
+    "summary": "Engineering executive specializing in AI-driven solutions...",
+    "location": {
+      "city": "San Francisco",
+      "region": "CA"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "pepperpancoast",
+        "url": "https://linkedin.com/in/pepperpancoast"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tech Corp Inc.",
+      "position": "Chief Technology Officer",
+      "startDate": "2020-01",
+      "endDate": "Present",
+      "summary": "Leading the technology strategy and engineering teams...",
+      "highlights": [
+        "Scaled team from 10 to 50 engineers",
+        "Launched AI-driven analytics platform",
+        "Reduced infrastructure costs by 30%"
+      ]
+    },
+    {
+      "name": "Innovation Labs",
+      "position": "VP of Engineering",
+      "startDate": "2017-06",
+      "endDate": "2019-12",
+      "summary": "Managed software development and product delivery...",
+      "highlights": [
+        "Delivered flagship product 2 months ahead of schedule",
+        "Implemented Agile transformation"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "area": "Computer Science",
+      "studyType": "Master's Degree",
+      "startDate": "2010",
+      "endDate": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Leadership",
+      "keywords": ["Strategic Planning", "Team Building", "Agile"]
+    },
+    {
+      "name": "Technical",
+      "keywords": ["React", "Node.js", "Python", "AWS", "AI/ML"]
+    }
+  ]
+}

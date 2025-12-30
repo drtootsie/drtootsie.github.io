@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import resumeData from '../data/resume.json';
 
 const Home = () => {
   return (
@@ -10,10 +11,10 @@ const Home = () => {
         <Container>
           <Row className="align-items-center">
             <Col md={8}>
-              <h1 className="display-4 fw-bold">Pepper Pancoast</h1>
-              <p className="lead fs-3 text-muted">Engineering Executive & Technology Strategist</p>
+              <h1 className="display-4 fw-bold">{resumeData.basics.name}</h1>
+              <p className="lead fs-3 text-muted">{resumeData.basics.label}</p>
               <p className="mb-4">
-                Specializing in AI-driven solutions, software architecture, and building high-performance teams.
+                {resumeData.basics.summary}
               </p>
               <Button variant="primary" size="lg" className="me-2" href="#contact">Get in Touch</Button>
               <Button variant="outline-dark" size="lg" as={Link} to="/about">More About Me</Button>
@@ -21,7 +22,7 @@ const Home = () => {
             <Col md={4} className="text-center">
               {/* Placeholder for Profile Image */}
                <div className="rounded-circle bg-secondary d-flex align-items-center justify-content-center mx-auto" style={{ width: '200px', height: '200px', overflow: 'hidden' }}>
-                  <img src="./images/bio-photo.jpg" alt="Pepper Pancoast" style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
+                  <img src="./images/bio-photo.jpg" alt={resumeData.basics.name} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
               </div>
             </Col>
           </Row>
@@ -35,8 +36,7 @@ const Home = () => {
             <Col lg={8} className="mx-auto text-center">
               <h2 className="fw-bold mb-4">About Me</h2>
               <p className="fs-5 text-secondary">
-                I am a passionate technology leader with a deep focus on leveraging artificial intelligence to solve complex problems. 
-                With a background in software engineering and strategic planning, I bridge the gap between technical innovation and business value.
+               {resumeData.basics.summary}
               </p>
             </Col>
           </Row>
@@ -48,64 +48,72 @@ const Home = () => {
         <Container>
           <h2 className="fw-bold mb-5 text-center">Skills & Expertise</h2>
           <Row className="g-4">
-            <Col md={4}>
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body>
-                  <Card.Title className="fw-bold">Leadership</Card.Title>
-                  <Card.Text>
-                    Strategic Planning, Team Building, Agile Methodologies, Mentorship, Stakeholder Management
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4}>
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body>
-                  <Card.Title className="fw-bold">Technical</Card.Title>
-                  <Card.Text>
-                    <Badge bg="secondary" className="me-1">React</Badge>
-                    <Badge bg="secondary" className="me-1">Node.js</Badge>
-                    <Badge bg="secondary" className="me-1">Python</Badge>
-                    <Badge bg="secondary" className="me-1">AWS</Badge>
-                    <Badge bg="secondary" className="me-1">AI/ML</Badge>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4}>
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body>
-                  <Card.Title className="fw-bold">Innovation</Card.Title>
-                  <Card.Text>
-                    Product Strategy, MVP Development, Digital Transformation, Cloud Architecture
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            {resumeData.skills.map((skillCategory, index) => (
+              <Col md={4} key={index}>
+                <Card className="h-100 border-0 shadow-sm">
+                  <Card.Body>
+                    <Card.Title className="fw-bold">{skillCategory.name}</Card.Title>
+                    <Card.Text>
+                      {skillCategory.keywords.map((keyword, kIndex) => (
+                        <Badge bg="secondary" className="me-1 mb-1" key={kIndex}>{keyword}</Badge>
+                      ))}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
 
-      {/* Experience Section (Placeholder for LinkedIn Data) */}
+      {/* Experience Section */}
       <section className="py-5">
         <Container>
           <h2 className="fw-bold mb-4">Professional Experience</h2>
           <div className="border-start border-3 ps-4 border-primary">
-            <div className="mb-4">
-              <h4>Position Title</h4>
-              <p className="text-muted mb-1">Company Name • Date - Present</p>
-              <p>
-                Brief description of the role and key achievements. This section will be populated with detailed data from LinkedIn in the future.
-              </p>
-            </div>
-            <div className="mb-4">
-              <h4>Previous Position</h4>
-              <p className="text-muted mb-1">Previous Company • Date - Date</p>
-              <p>
-                Description of responsibilities and impact.
-              </p>
-            </div>
+            {resumeData.work.map((job, index) => (
+              <div className="mb-5 position-relative" key={index}>
+                {/* Dot on the timeline */}
+                <div className="position-absolute bg-primary rounded-circle" style={{ width: '16px', height: '16px', left: '-33px', top: '5px' }}></div>
+                
+                <h4 className="fw-bold">{job.position}</h4>
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h5 className="text-primary mb-0">{job.name}</h5>
+                  <span className="text-muted small">{job.startDate} - {job.endDate}</span>
+                </div>
+                <p className="text-muted mb-2">{job.summary}</p>
+                {job.highlights && (
+                  <ul className="mb-0">
+                    {job.highlights.map((highlight, hIndex) => (
+                      <li key={hIndex}>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
+        </Container>
+      </section>
+
+       {/* Education Section */}
+       <section className="py-5 bg-light">
+        <Container>
+          <h2 className="fw-bold mb-4">Education</h2>
+          <Row>
+             {resumeData.education.map((edu, index) => (
+                <Col md={6} key={index} className="mb-3">
+                    <Card className="h-100 border-0 shadow-sm">
+                        <Card.Body>
+                            <Card.Title>{edu.institution}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{edu.studyType}, {edu.area}</Card.Subtitle>
+                            <Card.Text className="text-muted small">
+                                {edu.startDate} - {edu.endDate}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+             ))}
+          </Row>
         </Container>
       </section>
 
