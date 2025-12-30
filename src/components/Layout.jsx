@@ -9,7 +9,7 @@ const Layout = () => {
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="flex-shrink-0">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>My Website</Navbar.Brand>
+            <Navbar.Brand>Pepper's Website</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
