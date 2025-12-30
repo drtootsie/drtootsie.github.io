@@ -1,14 +1,15 @@
 {
   "basics": {
     "name": "Pepper Pancoast",
-    "label": "Engineering Executive & Technology Strategist",
-    "email": "pepper@example.com",
+    "label": "Director of Engineering",
+    "email": "pepper.pancoast@example.com",
     "phone": "",
-    "url": "https://drtootsie.github.io",
-    "summary": "Engineering executive specializing in AI-driven solutions...",
+    "url": "https://www.pepperpancoast.com",
+    "summary": "Results-driven engineering leader with a dual background in electrical engineering and business management. Over a decade of experience directing multi-disciplinary teams in clinical and platform development, focusing on regulatory features and modernizing legacy products.",
     "location": {
-      "city": "San Francisco",
-      "region": "CA"
+      "city": "Lee's Summit",
+      "region": "MO",
+      "countryCode": "US"
     },
     "profiles": [
       {
@@ -20,46 +21,55 @@
   },
   "work": [
     {
-      "name": "Tech Corp Inc.",
-      "position": "Chief Technology Officer",
-      "startDate": "2020-01",
+      "name": "Netsmart",
+      "position": "Director of Engineering",
+      "startDate": "Present",
       "endDate": "Present",
-      "summary": "Leading the technology strategy and engineering teams...",
+      "summary": "Leading initiatives in clinical and platform development, focusing on regulatory features and the deprecation of legacy products.",
       "highlights": [
-        "Scaled team from 10 to 50 engineers",
-        "Launched AI-driven analytics platform",
-        "Reduced infrastructure costs by 30%"
+        "Directing multi-disciplinary engineering teams.",
+        "Driving clinical and platform development strategy.",
+        "Overseeing regulatory feature implementation and legacy product modernization."
       ]
     },
     {
-      "name": "Innovation Labs",
-      "position": "VP of Engineering",
-      "startDate": "2017-06",
-      "endDate": "2019-12",
-      "summary": "Managed software development and product delivery...",
+      "name": "Cerner Corporation",
+      "position": "Software Engineering Manager",
+      "startDate": "2014",
+      "endDate": "2021",
+      "summary": "Held multiple roles including Team Lead and Software Engineer. Built and led software teams coordinating work across multiple countries and technical stacks.",
       "highlights": [
-        "Delivered flagship product 2 months ahead of schedule",
-        "Implemented Agile transformation"
+        "Managed software engineering teams and coordinated international development efforts.",
+        "Served as Team Lead and Software Engineer prior to management role.",
+        "Completed Velocity Software Internship."
       ]
+    },
+    {
+      "name": "University of Missouri",
+      "position": "Community Advisor",
+      "startDate": "2011",
+      "endDate": "2014",
+      "summary": "Served as a community leader and advisor during university studies.",
+      "highlights": []
     }
   ],
   "education": [
     {
-      "institution": "University of Technology",
-      "area": "Computer Science",
-      "studyType": "Master's Degree",
-      "startDate": "2010",
-      "endDate": "2012"
+      "institution": "University of Missouri-Columbia",
+      "area": "Electrical Engineering",
+      "studyType": "Bachelor's Degree",
+      "startDate": "2009",
+      "endDate": "2014"
     }
   ],
   "skills": [
     {
       "name": "Leadership",
-      "keywords": ["Strategic Planning", "Team Building", "Agile"]
+      "keywords": ["Engineering Management", "Team Building", "Strategic Planning", "Cross-functional Coordination"]
     },
     {
       "name": "Technical",
-      "keywords": ["React", "Node.js", "Python", "AWS", "AI/ML"]
+      "keywords": ["Node.js", "JavaScript", "HTML", "Ruby", "J2EE", "API Development", "Jira REST API"]
     }
   ]
 }
