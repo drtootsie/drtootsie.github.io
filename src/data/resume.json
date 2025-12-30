@@ -71,5 +71,19 @@
       "name": "Technical",
       "keywords": ["Node.js", "JavaScript", "HTML", "Ruby", "J2EE", "API Development", "Jira REST API"]
     }
+  ],
+  "projects": [
+    {
+      "name": "Personal Portfolio Website",
+      "description": "A modern, responsive portfolio site built with React and Vite, featuring automated CI/CD pipelines via GitHub Actions.",
+      "keywords": ["React", "Vite", "GitHub Actions", "Bootstrap"],
+      "url": "https://github.com/drtootsie/drtootsie.github.io"
+    },
+    {
+      "name": "Clinical Platform Modernization",
+      "description": "Led the strategic initiative to modernize legacy clinical systems, improving regulatory compliance and user experience.",
+      "keywords": ["Leadership", "Legacy Modernization", "Healthcare IT"],
+      "url": "#"
+    }
   ]
 }

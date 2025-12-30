@@ -66,8 +66,41 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* Experience Section */}
+      {/* Projects Section */}
       <section className="py-5">
+        <Container>
+          <h2 className="fw-bold mb-4">Featured Projects</h2>
+          <Row className="g-4">
+            {resumeData.projects && resumeData.projects.map((project, index) => (
+              <Col md={6} key={index}>
+                <Card className="h-100 shadow-sm border-0 bg-white">
+                  <Card.Body>
+                    <div className="d-flex justify-content-between align-items-start mb-2">
+                      <Card.Title className="fw-bold h5">{project.name}</Card.Title>
+                      {project.url && project.url !== '#' && (
+                         <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                           <i className="bi bi-link-45deg"></i> View
+                         </a>
+                      )}
+                    </div>
+                    <Card.Text className="text-muted mb-3">
+                      {project.description}
+                    </Card.Text>
+                    <div>
+                      {project.keywords.map((keyword, kIndex) => (
+                        <Badge bg="light" text="dark" className="me-1 border" key={kIndex}>{keyword}</Badge>
+                      ))}
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-5 bg-light">
         <Container>
           <h2 className="fw-bold mb-4">Professional Experience</h2>
           <div className="border-start border-3 ps-4 border-primary">
