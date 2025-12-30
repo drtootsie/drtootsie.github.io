@@ -1,8 +1,8 @@
 name: Create Issue on Security Alert
 
 on:
-  dependabot_alert:
-    types: [created]
+  repository_vulnerability_alert:
+    types: [create]
 
 permissions:
   issues: write
@@ -16,18 +16,23 @@ jobs:
         with:
           script: |
             const alert = context.payload.alert;
-            const title = `Security Alert: ${alert.security_vulnerability.package.name} (${alert.security_vulnerability.severity})`;
+            const packageName = alert.affected_package_name;
+            const severity = alert.severity;
+            const ghsaId = alert.ghsa_id;
+            const alertUrl = alert.external_reference || `https://github.com/${context.repo.owner}/${context.repo.repo}/network/alert/${alert.number}`;
+
+            const title = `Security Alert: ${packageName} (${severity})`;
             const body = `
             # Security Alert Detected
             
-            **Package:** ${alert.security_vulnerability.package.name}
-            **Severity:** ${alert.security_vulnerability.severity}
-            **Ecosystem:** ${alert.security_vulnerability.package.ecosystem}
+            **Package:** ${packageName}
+            **Severity:** ${severity}
+            **GHSA ID:** ${ghsaId}
             
             ## Description
-            ${alert.security_advisory.description}
+            A new security vulnerability has been detected in your dependencies.
             
-            [View Alert Details](${alert.html_url})
+            [View Alert Details](${alertUrl})
             `;
             
             await github.rest.issues.create({
