@@ -6,7 +6,7 @@ on:
     - cron: '0 8 * * *' # Run daily at 8:00 AM UTC
 
 permissions:
-  dependabot_alerts: read
+  security-events: read
   issues: write
 
 jobs:
