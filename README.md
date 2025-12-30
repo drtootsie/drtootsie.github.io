@@ -1,27 +1,57 @@
-# Minimal Mistakes remote theme starter
+# Dr. Tootsie's Personal Website
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+This is the source code for my personal website, built with React and Vite. It is hosted on GitHub Pages at [pepperpancoast.com](https://www.pepperpancoast.com).
 
-Contains basic configuration to get you a site with:
+## 🚀 Tech Stack
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+- **Framework:** [React](https://reactjs.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Bootstrap](https://getbootstrap.com/) & [React-Bootstrap](https://react-bootstrap.github.io/)
+- **Routing:** [React Router](https://reactrouter.com/)
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+## 🛠️ Local Development
 
----
+To run the site locally for development:
 
-## Troubleshooting
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/drtootsie/drtootsie.github.io.git
+   cd drtootsie.github.io
+   ```
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:5173`.
+
+## 📦 Deployment Workflow
+
+This project uses an automated deployment workflow via GitHub Actions.
+
+1. **Branching Strategy:**
+   - `develop`: The main development branch. **Always make your changes here.**
+   - `gh-pages`: The live website branch. This is automatically managed by GitHub Actions; **do not edit it directly.**
+
+2. **How to Deploy:**
+   Simply push your changes to the `develop` branch:
+   ```bash
+   git add .
+   git commit -m "Your descriptive commit message"
+   git push origin develop
+   ```
+   GitHub Actions will automatically build the React app and deploy the static files to the `gh-pages` branch.
+
+## 📁 Project Structure
+
+- `src/`: Contains the React source code.
+  - `components/`: Reusable UI components.
+  - `pages/`: Individual page components (Home, About, Blog, etc.).
+  - `data/`: JSON files containing site content (posts, resume).
+- `public/`: Static assets like images and the CNAME file.
+- `assets/`: Global assets and images.
