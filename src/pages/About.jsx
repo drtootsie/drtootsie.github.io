@@ -19,6 +19,9 @@ const About = () => {
           <p>
             I thrive on "nerd things" and cycling through passions just as I did in my youth—whether it's diving deep into new tech stacks, gaming, or exploring the outdoors.
           </p>
+          <p className="mt-3 text-muted">
+            Professionally, I serve as the <strong>Director of Engineering at Netsmart</strong>, where I lead multi-disciplinary teams to build compliant, scalable clinical platforms. My background spans from Electrical Engineering to managing international software teams.
+          </p>
         </Col>
       </Row>
 

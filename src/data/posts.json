@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Building a Modern Portfolio with React & GitHub Actions",
+    "date": "2025-12-30",
+    "summary": "How I rebuilt my personal site using Vite, React, and automated workflows to keep everything fresh.",
+    "tags": ["React", "DevOps", "GitHub Actions"],
+    "content": "This website was built to be a living representation of my work. Using React and Vite allows for blazing fast performance, while GitHub Actions handles the heavy lifting of deployment and security scanning. The goal was to create a maintenance-free setup where updating my resume or adding a blog post is as simple as editing a JSON file."
+  },
+  {
+    "id": "2",
+    "title": "Leading Engineering Teams in Healthcare",
+    "date": "2025-11-15",
+    "summary": "Reflections on managing multi-disciplinary teams and the importance of regulatory compliance in clinical software.",
+    "tags": ["Leadership", "Healthcare IT", "Engineering Management"],
+    "content": "In the healthcare space, 'move fast and break things' isn't just risky—it's dangerous. Leading engineering teams at Netsmart and Cerner taught me that true velocity comes from clarity and automated quality checks, not just coding speed. Balancing innovation with regulatory compliance is the core challenge of modern HealthTech."
+  },
+  {
+    "id": "3",
+    "title": "From Electrical Engineering to Software Leadership",
+    "date": "2025-09-20",
+    "summary": "My journey from Mizzou EE grad to Director of Engineering, and how hardware discipline shapes my software strategy.",
+    "tags": ["Career", "Electrical Engineering", "Software Architecture"],
+    "content": "Starting in Electrical Engineering at Mizzou gave me a deep appreciation for systems constraints. In software, we often forget that resources are finite. My background in EE helps me view software architecture not just as code, but as a system of signals, bottlenecks, and capacities."
+  }
+]

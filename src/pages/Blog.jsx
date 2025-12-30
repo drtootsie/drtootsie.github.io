@@ -1,42 +1,13 @@
-import React from 'react';
-import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap';
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "My First Blog Post!!",
-    date: "Dec 30, 2025",
-    summary: "Reflecting on what I learned this week, from Garmin lap buttons to RSUs and setting up a GitHub blog.",
-    tags: ["Jekyll", "Update", "Life"],
-    content: "I want to put what I learned every week..."
-  },
-  {
-    id: 2,
-    title: "Exploring React & Vite",
-    date: "Jan 05, 2026",
-    summary: "Setting up a modern web development environment with Vite is incredibly fast. Here's my experience migrating from CRA.",
-    tags: ["React", "Vite", "DevOps"],
-    content: "..."
-  },
-  {
-    id: 3,
-    title: "AI in Healthcare",
-    date: "Jan 12, 2026",
-    summary: "How large language models are transforming patient care and administrative efficiency.",
-    tags: ["AI", "Healthcare", "Tech"],
-    content: "..."
-  },
-   {
-    id: 4,
-    title: "The Joy of cycling",
-    date: "Jan 20, 2026",
-    summary: "Why getting outside and hitting the trails is the best way to clear your mind after a long week of coding.",
-    tags: ["Hobbies", "Cycling", "Wellness"],
-    content: "..."
-  }
-];
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Badge, Button, Modal } from 'react-bootstrap';
+import blogPosts from '../data/posts.json';
 
 const Blog = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  const handleClose = () => setSelectedPost(null);
+  const handleShow = (post) => setSelectedPost(post);
+
   return (
     <Container className="py-5">
       <div className="text-center mb-5">
@@ -50,7 +21,7 @@ const Blog = () => {
             <Card className="h-100 shadow-sm hover-shadow transition-all">
               <Card.Body className="d-flex flex-column">
                 <div className="mb-2">
-                  <small className="text-muted">{post.date}</small>
+                  <small className="text-muted">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</small>
                 </div>
                 <Card.Title className="fw-bold mb-3">{post.title}</Card.Title>
                 <Card.Text className="flex-grow-1 text-secondary">
@@ -61,12 +32,43 @@ const Blog = () => {
                     <Badge bg="light" text="dark" className="me-1 border" key={idx}>#{tag}</Badge>
                   ))}
                 </div>
-                <Button variant="outline-primary" size="sm" className="mt-auto align-self-start">Read More</Button>
+                <Button 
+                  variant="outline-primary" 
+                  size="sm" 
+                  className="mt-auto align-self-start"
+                  onClick={() => handleShow(post)}
+                >
+                  Read More
+                </Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {/* Post Modal */}
+      <Modal show={!!selectedPost} onHide={handleClose} size="lg" centered>
+        {selectedPost && (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>{selectedPost.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p className="text-muted mb-4">
+                {new Date(selectedPost.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+              <div style={{ whiteSpace: 'pre-line' }}>
+                {selectedPost.content}
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </>
+        )}
+      </Modal>
     </Container>
   );
 };
