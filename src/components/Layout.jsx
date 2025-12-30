@@ -29,6 +29,9 @@ const Layout = () => {
               <LinkContainer to="/mocktail-recipes">
                 <Nav.Link>Mocktail Recipes</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/projects">
+                <Nav.Link>Projects</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
