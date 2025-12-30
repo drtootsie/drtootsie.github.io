@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import StoryTime from './pages/StoryTime';
+import MocktailRecipes from './pages/MocktailRecipes';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="story-time" element={<StoryTime />} />
+          <Route path="mocktail-recipes" element={<MocktailRecipes />} />
         </Route>
       </Routes>
     </Router>
