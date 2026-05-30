@@ -205,21 +205,62 @@ const MosesBrownTrack = () => {
         </Tab>
 
         {/* History Tab */}
-        <Tab eventKey="history" title="Legacy & History">
-          <Row className="g-4 mt-1">
-            {trackData.championships.map((ch, i) => (
-              <Col md={6} lg={4} key={i}>
-                <Card className="h-100 shadow-sm border-0">
-                  <Card.Body>
-                    <h6 className="fw-bold text-primary">{ch.sport}</h6>
-                    <p className="small text-muted mb-3">{ch.type}</p>
-                    <div className="d-flex flex-wrap gap-1">
-                      {ch.years.map(y => <Badge key={y} bg="warning" text="dark" className="border-0 shadow-sm">{y}</Badge>)}
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+        <Tab eventKey="history" title="Legacy & Records">
+          <Row>
+            <Col lg={8}>
+              <Card className="shadow-sm border-0 mb-4">
+                <Card.Header className="bg-dark text-white fw-bold">School Records (All-Time)</Card.Header>
+                <Card.Body className="p-0">
+                  <Table responsive hover className="mb-0">
+                    <thead className="bg-light">
+                      <tr>
+                        <th className="ps-4">Event</th>
+                        <th>Athlete</th>
+                        <th>Mark</th>
+                        <th>Year</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trackData.school_records.map((r, i) => (
+                        <tr key={i}>
+                          <td className="ps-4 fw-bold">{r.event}</td>
+                          <td>{r.athlete}</td>
+                          <td className="text-primary fw-bold">{r.mark}</td>
+                          <td className="text-muted">{r.year}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </Card.Body>
+              </Card>
+
+              <h5 className="fw-bold mb-3">Championship History</h5>
+              <Row className="g-4">
+                {trackData.championships.map((ch, i) => (
+                  <Col md={6} key={i}>
+                    <Card className="h-100 shadow-sm border-0">
+                      <Card.Body>
+                        <h6 className="fw-bold text-primary">{ch.sport}</h6>
+                        <p className="small text-muted mb-3">{ch.type}</p>
+                        <div className="d-flex flex-wrap gap-1">
+                          {ch.years.map(y => <Badge key={y} bg="warning" text="dark" className="border-0 shadow-sm">{y}</Badge>)}
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+            <Col lg={4}>
+              <Card className="shadow-sm border-0 mb-4">
+                <Card.Header className="bg-primary text-white fw-bold">Program Milestones</Card.Header>
+                <Card.Body>
+                  <p className="small">Moses Brown Track & Field has a storied history, including the legendary <strong>6-year Championship Streak</strong> (2018-2024) for the Girls' Outdoor squad.</p>
+                  <hr />
+                  <p className="small mb-0">The Boys' team achieved its first-ever team title at the <strong>RIIL Class C Championships</strong> in 2024, followed by a historic 2nd place finish in 2026.</p>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
         </Tab>
       </Tabs>

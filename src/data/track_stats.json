@@ -72,16 +72,24 @@
     ]
   },
   "coaches": [
-    { "name": "Matty Bennett", "role": "Head Coach (Outdoor)", "specialty": "Distance/Strategy" },
-    { "name": "Nathaniel Shaw", "role": "Coach", "specialty": "Sprints" },
-    { "name": "Audrey Trowbridge", "role": "Coach", "specialty": "Field Events" },
-    { "name": "Joe Leavell", "role": "Coach", "specialty": "Hurdles" },
-    { "name": "Lee Webb", "role": "Coach", "specialty": "Throws" }
+    { "name": "Matty Bennett", "role": "Head Coach", "specialty": "Distance/Strategy" },
+    { "name": "Nathaniel Shaw", "role": "Math Teacher & Coach", "specialty": "Distance/Sprints" },
+    { "name": "Audrey Trowbridge", "role": "Coach (LHS)", "specialty": "Sprints/Hurdles" }
+  ],
+  "school_records": [
+    { "event": "100m Dash", "athlete": "Walker Brown", "mark": "10.93", "year": "2026" },
+    { "event": "400m Dash", "athlete": "Sophia Gorriaran", "mark": "54.10", "year": "2021" },
+    { "event": "600m Run", "athlete": "Sophia Gorriaran", "mark": "1:25.22", "year": "2022" },
+    { "event": "800m Run", "athlete": "Sophia Gorriaran", "mark": "2:00.65", "year": "2022" },
+    { "event": "800m Run (Boys)", "athlete": "Thomas Speltz", "mark": "1:54.68", "year": "2023" },
+    { "event": "1500m Run", "athlete": "Eli Ziegler", "mark": "3:59.56", "year": "2024" },
+    { "event": "Pole Vault", "athlete": "Gabe Lane", "mark": "11' 6\"", "year": "2024" },
+    { "event": "Hammer Throw", "athlete": "Owen Spira", "mark": "216' 5\"", "year": "2024" }
   ],
   "championships": [
     { "sport": "Outdoor Track (Boys)", "type": "State Champions", "years": ["1927", "1936"] },
     { "sport": "Outdoor Track (Boys)", "type": "Class C Champions", "years": ["2024"] },
-    { "sport": "Outdoor Track (Girls)", "type": "Class C Champions", "years": ["2020", "2021", "2022", "2023", "2024"] },
+    { "sport": "Outdoor Track (Girls)", "type": "Class C Champions", "years": ["2018", "2019", "2020", "2021", "2022", "2023", "2024"] },
     { "sport": "Indoor Track (Girls)", "type": "Class B Champions", "years": ["2026"] },
     { "sport": "Indoor Track (Boys)", "type": "Class B Champions", "years": ["1961", "1965", "1966"] },
     { "sport": "Cross Country (Girls)", "type": "Class C Champions", "years": ["2021", "2025"] }
