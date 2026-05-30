@@ -2,34 +2,38 @@
   "recent_performances": [
     { "athlete": "Skyler Maxwell", "grade": "12", "event": "400m", "mark": "55.89", "meet": "Glenn D. Loucks Games", "date": "May 9, 2026", "rank": "1st (PR)" },
     { "athlete": "Walker Brown", "grade": "12", "event": "100m", "mark": "10.93", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Record)" },
+    { "athlete": "Kendra Satine", "grade": "12", "event": "100m", "mark": "12.35", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Prelims)" },
     { "athlete": "Walker Brown", "grade": "12", "event": "200m", "mark": "22.86", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
     { "athlete": "Skyler Maxwell", "grade": "12", "event": "200m", "mark": "25.15", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" },
-    { "athlete": "Skyler Maxwell", "grade": "12", "event": "400m", "mark": "56.56", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" },
-    { "athlete": "Silas Hoefferle", "grade": "12", "event": "Hammer Throw", "mark": "169' 10\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
-    { "athlete": "Edie Lane", "grade": "10", "event": "3000m", "mark": "11:45.01", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top 10" },
+    { "athlete": "Silas Hoefferle", "grade": "9", "event": "Hammer Throw", "mark": "169' 10\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
+    { "athlete": "Owen Richards", "grade": "11", "event": "Pole Vault", "mark": "12' 6\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
+    { "athlete": "Edie Lane", "grade": "11", "event": "3000m", "mark": "11:45.01", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top 10" },
     { "athlete": "Charlie Grand", "grade": "11", "event": "3000m", "mark": "10:30.91", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "7th (PR)" },
-    { "athlete": "Girls 4x100m", "grade": "Varsity", "event": "Relay", "mark": "48.36", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" },
-    { "athlete": "Owen Richards", "grade": "12", "event": "Pole Vault", "mark": "12' 6\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" }
+    { "athlete": "Girls 4x100m", "grade": "Varsity", "event": "Relay", "mark": "48.36", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" }
   ],
   "full_meet_archive": {
     "RIIL Class C Championships (May 23)": [
-      { "athlete": "Skyler Maxwell", "event": "400m", "mark": "56.56", "place": "1st", "points": 10 },
       { "athlete": "Skyler Maxwell", "event": "200m", "mark": "25.15", "place": "1st", "points": 10 },
+      { "athlete": "Skyler Maxwell", "event": "400m", "mark": "56.56", "place": "1st", "points": 10 },
       { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.36", "place": "1st", "points": 10 },
       { "athlete": "Girls 4x400m", "event": "Relay", "mark": "4:12.95", "place": "1st", "points": 10 },
       { "athlete": "Walker Brown", "event": "200m", "mark": "22.86", "place": "2nd", "points": 8 },
       { "athlete": "Silas Hoefferle", "event": "Hammer Throw", "mark": "169' 10\"", "place": "2nd", "points": 8 },
       { "athlete": "Owen Richards", "event": "Pole Vault", "mark": "12' 6\"", "place": "2nd", "points": 8 },
-      { "athlete": "Edie Lane", "event": "3000m", "mark": "11:45.01", "place": "Top 10", "points": 1 },
+      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.57", "place": "3rd", "points": 6 },
+      { "athlete": "Kendra Satine", "event": "Long Jump", "mark": "16' 11.5\"", "place": "Top Finish", "points": 4 },
       { "athlete": "Charlie Grand", "event": "3000m", "mark": "10:30.91", "place": "7th", "points": 2 },
-      { "athlete": "Charlie Grand", "event": "1500m", "mark": "4:34.54", "place": "11th", "points": 0 },
-      { "athlete": "Anthony Gario", "event": "100m", "mark": "12.41", "place": "Finals", "points": 0 },
-      { "athlete": "Leila Hopkins", "event": "High Jump", "mark": "5' 2\"", "place": "2nd", "points": 8 }
+      { "athlete": "Edie Lane", "event": "3000m", "mark": "11:45.01", "place": "Top 10", "points": 1 },
+      { "athlete": "Anthony Gario", "event": "4x100m Relay", "mark": "45.84", "place": "Top Finish", "points": 2 },
+      { "athlete": "Michael Diehl", "event": "Pole Vault", "mark": "8' 6\"", "place": "14th", "points": 0 }
     ],
     "Central Division Championships (May 17)": [
       { "athlete": "Walker Brown", "event": "100m", "mark": "10.93", "place": "1st", "points": 10 },
       { "athlete": "Skyler Maxwell", "event": "800m", "mark": "2:18.37", "place": "1st", "points": 10 },
-      { "athlete": "Lane Aaronian", "event": "800m", "mark": "2:03.55", "place": "3rd", "points": 6 }
+      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.41", "place": "2nd", "points": 8 },
+      { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.57", "place": "1st", "points": 10 },
+      { "athlete": "Lane Aaronian", "event": "800m", "mark": "2:03.55", "place": "3rd", "points": 6 },
+      { "athlete": "Tyson Ajakaije", "event": "4x100m Relay", "mark": "45.86", "place": "Top Finish", "points": 4 }
     ]
   },
   "meet_schedule": [
