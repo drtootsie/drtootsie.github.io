@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card, Table, Badge, ListGroup, ProgressBar, Button, Tabs, Tab } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col, Card, Table, Badge, ListGroup, Button, Tabs, Tab } from 'react-bootstrap';
 
-const RECENT_PRs = [
-  { athlete: "Walker Brown", grade: "12", event: "100m", mark: "10.93s", meet: "Central Division Champs" },
-  { athlete: "Ben Glew", grade: "11", event: "1500m", mark: "4:10.55", meet: "Central Division Champs" },
-  { athlete: "Lane Aaronian", grade: "10", event: "800m", mark: "2:03.55", meet: "Class C Champs" },
-  { athlete: "Walker Brown", grade: "12", event: "200m", mark: "22.86s", meet: "Class C Champs" }
+const RECENT_PERFORMANCES = [
+  { athlete: "Walker Brown", grade: "12", event: "100m", mark: "10.93s", meet: "Central Division Champs", date: "May 26, 2026", rank: "1st" },
+  { athlete: "Skyler Maxwell", grade: "11", event: "600m", mark: "1:33.5", meet: "RI Indoor State Champs", date: "Feb 2026", rank: "1st (Record)" },
+  { athlete: "Ben Glew", grade: "11", event: "1500m", mark: "4:10.55", meet: "Central Division Champs", date: "May 26, 2026", rank: "2nd" },
+  { athlete: "Walker Brown", grade: "12", event: "200m", mark: "22.86s", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
+  { athlete: "Lane Aaronian", grade: "10", event: "800m", mark: "2:03.55", meet: "Class C Champs", date: "May 30, 2026", rank: "3rd" },
+  { athlete: "Jay Champlin", grade: "11", event: "3000m", mark: "9:15.20", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
+  { athlete: "Gabe Lane", grade: "12", event: "Pole Vault", mark: "13' 0\"", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" }
+];
+
+const MEET_SCHEDULE = [
+  { date: "Apr 4", meet: "Knights of Columbus Relays", location: "Providence, RI", status: "Completed" },
+  { date: "Apr 17", meet: "Quaker Invitational (Home)", location: "Moses Brown", status: "Completed" },
+  { date: "May 2", meet: "Classical Classic", location: "Conley Stadium", status: "Completed" },
+  { date: "May 26", meet: "Central Division Championships", location: "Cranston West", status: "Completed" },
+  { date: "May 30", meet: "RIIL Class C Championships", location: "Ponaganset", status: "Completed" },
+  { date: "Jun 6", meet: "RIIL State Championships", location: "Brown Stadium", status: "Upcoming" },
+  { date: "Jun 13", meet: "New England Championships", location: "TBD", status: "Pending" }
 ];
 
 const CHAMPIONSHIPS = [
@@ -17,131 +30,114 @@ const CHAMPIONSHIPS = [
 ];
 
 const MosesBrownTrack = () => {
-  const [projects, setProjects] = useState([
-    { id: 1, name: "New Hurdle Set", status: "In Progress", progress: 60 },
-    { id: 2, name: "XC Trail Maintenance", status: "Planned", progress: 10 },
-    { id: 3, name: "Strength Training Program", status: "Completed", progress: 100 }
-  ]);
-
-  const [updates, setUpdates] = useState([
-    { date: "May 25, 2026", text: "Incredible performance at the Central Division Champs! Multiple PRs recorded." },
-    { date: "May 12, 2026", text: "Middle school team qualified for the PVD Invitational. Bright future ahead!" },
-    { date: "Apr 20, 2026", text: "Outdoor season officially kicked off. The relay teams are looking fast." }
-  ]);
-
   return (
     <Container className="py-5">
       <Row className="mb-4 align-items-center">
         <Col md={8}>
-          <h1 className="display-4 fw-bold text-primary">Moses Brown Track & XC 🏃‍♂️</h1>
-          <p className="lead text-muted">Coaches Corner - Strategy, Stats, and Season Management</p>
+          <h1 className="display-4 fw-bold text-primary">Quakers Performance Hub 🏃‍♂️</h1>
+          <p className="lead text-muted">Moses Brown Track & XC - Season Stats & Meet Schedule</p>
         </Col>
         <Col md={4} className="text-md-end">
-          <Badge bg="dark" className="fs-5 p-2 px-3">Quakers Athletics</Badge>
+          <Badge bg="dark" className="fs-5 p-2 px-3 shadow-sm">MB Athletics</Badge>
         </Col>
       </Row>
 
-      <Tabs defaultActiveKey="stats" id="coach-tabs" className="mb-4 nav-pills custom-pills">
-        <Tab eventKey="stats" title="Leaderboard & History">
-          <Row className="g-4 mt-1">
-            <Col lg={7}>
-              <Card className="shadow-sm border-0 h-100">
-                <Card.Header className="bg-primary text-white fw-bold">Recent Top Marks (2026 Season)</Card.Header>
-                <Card.Body>
-                  <Table responsive hover>
-                    <thead>
-                      <tr>
-                        <th>Athlete</th>
-                        <th>Event</th>
-                        <th>Mark</th>
-                        <th>Meet</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {RECENT_PRs.map((pr, i) => (
-                        <tr key={i}>
-                          <td className="fw-bold">{pr.athlete} <small className="text-muted">({pr.grade})</small></td>
-                          <td>{pr.event}</td>
-                          <td><Badge bg="success">{pr.mark}</Badge></td>
-                          <td className="small">{pr.meet}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </Table>
-                  <div className="d-flex gap-2 mt-3">
-                    <Button variant="outline-primary" size="sm" href="https://ri.milesplit.com/teams/1044-moses-brown-school" target="_blank">MileSplit RI</Button>
-                    <Button variant="outline-primary" size="sm" href="https://www.athletic.net/TrackAndField/School.aspx?SchoolID=2341" target="_blank">Athletic.net</Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={5}>
-              <Card className="shadow-sm border-0 h-100">
-                <Card.Header className="bg-warning text-dark fw-bold">Championship History 🏆</Card.Header>
-                <Card.Body className="p-0">
-                  <ListGroup variant="flush">
-                    {CHAMPIONSHIPS.map((ch, i) => (
-                      <ListGroup.Item key={i} className="py-3">
-                        <div className="fw-bold text-primary">{ch.sport}</div>
-                        <div className="small text-muted mb-2">{ch.type}</div>
-                        <div className="d-flex flex-wrap gap-1">
-                          {ch.years.map(y => <Badge key={y} bg="light" text="dark" className="border">{y}</Badge>)}
-                        </div>
-                      </ListGroup.Item>
-                    ))}
-                  </ListGroup>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+      <Tabs defaultActiveKey="athletes" id="coach-tabs" className="mb-4 nav-pills custom-pills">
+        {/* Athlete Results Tab */}
+        <Tab eventKey="athletes" title="Athlete Results">
+          <Card className="shadow-sm border-0">
+            <Card.Header className="bg-primary text-white d-flex justify-content-between align-items-center">
+              <span className="fw-bold">2026 Meet Results & PRs</span>
+              <Badge bg="light" text="dark">Live Updates</Badge>
+            </Card.Header>
+            <Card.Body className="p-0">
+              <Table responsive hover className="mb-0">
+                <thead className="bg-light">
+                  <tr>
+                    <th className="ps-4">Athlete</th>
+                    <th>Event</th>
+                    <th>Mark</th>
+                    <th>Rank</th>
+                    <th>Meet</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {RECENT_PERFORMANCES.map((res, i) => (
+                    <tr key={i} className="align-middle">
+                      <td className="ps-4 fw-bold">
+                        {res.athlete} <Badge bg="secondary" className="ms-1 small">{res.grade}</Badge>
+                      </td>
+                      <td>{res.event}</td>
+                      <td><Badge bg="success" className="fs-6">{res.mark}</Badge></td>
+                      <td className="fw-bold text-primary">{res.rank}</td>
+                      <td className="small">{res.meet}</td>
+                      <td className="small text-muted">{res.date}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Card.Body>
+            <Card.Footer className="bg-white text-center py-3">
+              <Button variant="outline-primary" size="sm" className="me-2" href="https://ri.milesplit.com/teams/1044-moses-brown-school" target="_blank">Full Team Roster</Button>
+              <Button variant="outline-primary" size="sm" href="https://www.athletic.net/TrackAndField/School.aspx?SchoolID=2341" target="_blank">Athlete Histories</Button>
+            </Card.Footer>
+          </Card>
         </Tab>
 
-        <Tab eventKey="projects" title="Coaching Projects">
-          <Row className="g-4 mt-1">
-            <Col lg={6}>
-              <Card className="shadow-sm border-0">
-                <Card.Header className="bg-dark text-white fw-bold">Active Initiatives</Card.Header>
-                <Card.Body>
-                  {projects.map(proj => (
-                    <div key={proj.id} className="mb-4">
-                      <div className="d-flex justify-content-between align-items-center mb-1">
-                        <span className="fw-bold">{proj.name}</span>
-                        <Badge bg={proj.status === 'Completed' ? 'success' : 'warning'}>{proj.status}</Badge>
+        {/* Meet Schedule Tab */}
+        <Tab eventKey="schedule" title="Meet Schedule">
+          <Card className="shadow-sm border-0">
+            <Card.Header className="bg-dark text-white fw-bold">2026 Outdoor Season Schedule</Card.Header>
+            <Card.Body className="p-0">
+              <ListGroup variant="flush">
+                {MEET_SCHEDULE.map((m, i) => (
+                  <ListGroup.Item key={i} className="py-3 px-4 d-flex justify-content-between align-items-center">
+                    <div className="d-flex align-items-center">
+                      <div className="text-center me-4" style={{ minWidth: '60px' }}>
+                        <div className="h5 mb-0 fw-bold">{m.date.split(' ')[1]}</div>
+                        <div className="small text-uppercase text-muted">{m.date.split(' ')[0]}</div>
                       </div>
-                      <ProgressBar now={proj.progress} variant={proj.progress === 100 ? 'success' : 'info'} />
+                      <div>
+                        <div className="fw-bold">{m.meet}</div>
+                        <small className="text-muted"><i className="bi bi-geo-alt"></i> {m.location}</small>
+                      </div>
                     </div>
-                  ))}
-                  <Button variant="outline-dark" className="w-100 mt-2">+ Add New Project</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={6}>
-              <Card className="shadow-sm border-0">
-                <Card.Header className="bg-info text-white fw-bold">Team Announcements</Card.Header>
-                <Card.Body>
-                  <ListGroup variant="flush">
-                    {updates.map((update, i) => (
-                      <ListGroup.Item key={i} className="py-3 px-0 border-bottom">
-                        <div className="d-flex align-items-center mb-1">
-                          <Badge bg="light" text="dark" className="me-2">{update.date}</Badge>
-                          <span className="fw-bold">Update #{updates.length - i}</span>
-                        </div>
-                        <p className="mb-0 text-secondary small">{update.text}</p>
-                      </ListGroup.Item>
-                    ))}
-                  </ListGroup>
-                </Card.Body>
-              </Card>
-            </Col>
+                    <Badge bg={m.status === 'Completed' ? 'secondary' : (m.status === 'Upcoming' ? 'success' : 'light')} text={m.status === 'Pending' ? 'dark' : 'white'}>
+                      {m.status}
+                    </Badge>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </Tab>
+
+        {/* History Tab */}
+        <Tab eventKey="history" title="Program History">
+          <Row className="g-4 mt-1">
+            {CHAMPIONSHIPS.map((ch, i) => (
+              <Col md={6} lg={4} key={i}>
+                <Card className="h-100 shadow-sm border-0">
+                  <Card.Body>
+                    <h6 className="fw-bold text-primary">{ch.sport}</h6>
+                    <p className="small text-muted mb-3">{ch.type}</p>
+                    <div className="d-flex flex-wrap gap-1">
+                      {ch.years.map(y => <Badge key={y} bg="warning" text="dark" className="border-0 shadow-sm">{y}</Badge>)}
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Tab>
       </Tabs>
 
       <Row className="mt-5 text-center">
         <Col>
-          <div className="p-4 bg-light rounded-4 border">
-            <h5>Go Quakers! 🟦⬜</h5>
-            <p className="text-muted mb-0">Moses Brown School Athletics - Providence, RI</p>
+          <div className="p-4 bg-primary text-white rounded-4 shadow">
+            <h3>Go Quakers! 🟦⬜</h3>
+            <p className="mb-0 opacity-75">Moses Brown Athletics - Legacy of Excellence since 1784</p>
           </div>
         </Col>
       </Row>
