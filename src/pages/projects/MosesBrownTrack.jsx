@@ -168,11 +168,54 @@ const MosesBrownTrack = () => {
         </Tab>
       </Tabs>
 
+      {/* State Meet Watchlist */}
+      <Card className="mt-5 border-0 shadow-sm bg-light">
+        <Card.Body className="p-4">
+          <Row className="align-items-center">
+            <Col md={8}>
+              <h4 className="fw-bold text-dark mb-1">State Meet Watchlist 👀</h4>
+              <p className="text-muted mb-0">Athletes to watch at Brown Stadium on June 6th.</p>
+            </Col>
+            <Col md={4} className="text-md-end mt-3 mt-md-0">
+              <Badge bg="danger" className="p-2 px-3">State Championships - 7 Days Away</Badge>
+            </Col>
+          </Row>
+          <hr />
+          <Row className="g-3">
+            <Col sm={6} md={3}>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <div className="fw-bold">Walker Brown</div>
+                <div className="small text-primary">100m / 200m</div>
+              </div>
+            </Col>
+            <Col sm={6} md={3}>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <div className="fw-bold">Skyler Maxwell</div>
+                <div className="small text-primary">400m / 800m</div>
+              </div>
+            </Col>
+            <Col sm={6} md={3}>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <div className="fw-bold">Jay Champlin</div>
+                <div className="small text-primary">3000m</div>
+              </div>
+            </Col>
+            <Col sm={6} md={3}>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <div className="fw-bold">Girls 4x400m</div>
+                <div className="small text-primary">Relay</div>
+              </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+
       <Row className="mt-5 text-center">
         <Col>
           <div className="p-4 bg-primary text-white rounded-4 shadow">
             <h3>Go Quakers! 🟦⬜</h3>
-            <p className="mb-0 opacity-75">Moses Brown Athletics - Excellence in Providence</p>
+            <p className="mb-2 opacity-75">Moses Brown Athletics - Excellence in Providence</p>
+            <small className="opacity-50">Head Coach: Matty Bennett</small>
           </div>
         </Col>
       </Row>

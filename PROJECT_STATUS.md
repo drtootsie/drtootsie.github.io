@@ -4,43 +4,42 @@ This document summarizes the current state of the `drtootsie.github.io` website 
 
 ## 1. Project Overview
 
-The original Jekyll-based website has been successfully rebuilt as a modern single-page application using the following technologies:
+The website is a modern single-page application built using:
 
 - **Framework:** React
 - **Build Tool:** Vite
 - **Styling:** Bootstrap & React-Bootstrap
-- **Deployment:** Automated via GitHub Actions
+- **Data:** Dynamic JSON-based architecture for resume, projects, and track stats.
+- **Deployment:** Automated via GitHub Actions.
 
-## 2. Current Status
+## 2. Current Status (May 2026 Refresh)
 
-- **Website is Live:** The new React site has been successfully built and deployed to GitHub Pages.
-- **Automated Deployments:** A GitHub Actions workflow is in place. This workflow automatically builds and deploys the site whenever new changes are pushed to the `develop` branch.
-- **Custom Domain:**
-    - The primary domain **`www.pepperpancoast.com`** is configured and shows as **valid** in your GitHub Pages settings.
-    - The root domain (`pepperpancoast.com`) is set up on GoDaddy to **forward** to the `www` version.
-    - **Note:** The error message `NotServedByPagesError` for the root domain is expected and can be ignored. It appears because we are using GoDaddy's forwarding feature instead of pointing `A` records to GitHub, which is a more flexible approach.
-- **DNS Propagation:** DNS changes and SSL certificate generation can take time to propagate fully across the internet. It may take anywhere from a few minutes to 24 hours.
+- **Website is Live:** Successfully deployed at **`www.pepperpancoast.com`**.
+- **Automated Deployments:** A GitHub Actions workflow (`deploy.yml`) builds and deploys the site whenever changes are pushed to the `develop` branch.
+- **Dynamic Track Stats Scraper:** 
+    - A Python-based scraping engine (`sync_track_stats.py`) is now functional.
+    - It targets Moses Brown School (ID 14717) and extracts real-time results from MileSplit.
+    - Automated daily sync runs at 3:00 AM UTC via `sync_stats.yml`.
+- **Custom Domain:** Configured and secured with HTTPS via GitHub Pages.
 
 ## 3. Your Development Workflow
 
-From now on, the process for updating your site is very simple:
-
-1.  Make any desired code changes in your local repository (which should be on the `develop` branch).
-2.  Commit your changes.
-3.  Push your changes to the `develop` branch on GitHub:
+1.  **Code Changes:** Work locally on the `develop` branch.
+2.  **Stat Sync:** Run `python3 sync_track_stats.py` locally to verify scraping logic if needed.
+3.  **Deploy:** Push changes to GitHub:
     ```bash
+    git add .
+    git commit -m "Your descriptive message"
     git push origin develop
     ```
 
-That's it. The GitHub Action will automatically handle the rest: building your site and deploying it.
-
 ## 4. Branch Roles
 
-- **`develop`**: This is your **main source code branch**. It's the only branch you need to work on.
-- **`gh-pages`**: This is your **live website branch**. The GitHub Action automatically overwrites this branch with the built HTML, CSS, and JS files. **Do not edit this branch directly.**
-- **`master`**: This branch holds the previous history of the project. It is **not used** in the new automated workflow.
+- **`develop`**: Main source code branch. **Only push here.**
+- **`gh-pages`**: Production build branch. Managed automatically by GitHub Actions. **Do not edit.**
+- **`master`**: Legacy history. Not used in the current workflow.
 
-## 5. Next Steps
+## 5. Active Initiatives
 
-- **Wait for Propagation:** Allow some time for the DNS and SSL certificate to become active. You should be able to access `https://www.pepperpancoast.com` soon.
-- **Enforce HTTPS:** Once you've confirmed the site is working on your custom domain, go to your repository's **Settings > Pages** and ensure the **"Enforce HTTPS"** checkbox is enabled.
+- **Championship Season Tracking:** Real-time monitoring of 2026 Outdoor Track results (Central Divisions, Class C, and upcoming States).
+- **Coach Collaboration:** Integrating analytics and highlights in collaboration with Coach Matty Bennett.

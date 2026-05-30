@@ -93,8 +93,8 @@
     },
     {
       "name": "Quakers Track Coaches Corner",
-      "description": "A dedicated dashboard for Moses Brown High School Track & XC, tracking season PRs, coaching projects, and team updates.",
-      "keywords": ["React", "Data Tracking", "Athletics", "Coaching"],
+      "description": "Collaborating with Coach Matty Bennett on a dedicated analytics dashboard for Moses Brown Track & XC. Successfully tracked the 2026 Indoor Class B Championship win and currently managing real-time results for the 2026 Outdoor championship season.",
+      "keywords": ["React", "Data Tracking", "Athletics", "Coaching", "Playwright"],
       "url": "/#/projects/quakers-track"
     },
     {
