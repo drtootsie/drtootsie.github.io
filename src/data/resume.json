@@ -92,6 +92,12 @@
       "url": "/#/kids-corner"
     },
     {
+      "name": "Quakers Track Coaches Corner",
+      "description": "A dedicated dashboard for Moses Brown High School Track & XC, tracking season PRs, coaching projects, and team updates.",
+      "keywords": ["React", "Data Tracking", "Athletics", "Coaching"],
+      "url": "/#/quakers-track"
+    },
+    {
       "name": "Clinical Platform Modernization",
       "description": "Led the strategic initiative to modernize legacy clinical systems, improving regulatory compliance and user experience.",
       "keywords": ["Leadership", "Legacy Modernization", "Healthcare IT"],

@@ -10,6 +10,7 @@ import ClueTracker from './pages/ClueTracker';
 import KidsCorner from './pages/KidsCorner';
 import InteractiveHub from './pages/InteractiveHub';
 import PlaylistConverter from './pages/PlaylistConverter';
+import MosesBrownTrack from './pages/MosesBrownTrack';
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="kids-corner" element={<KidsCorner />} />
           <Route path="hub" element={<InteractiveHub />} />
           <Route path="convert" element={<PlaylistConverter />} />
+          <Route path="quakers-track" element={<MosesBrownTrack />} />
         </Route>
       </Routes>
     </Router>

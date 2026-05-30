@@ -23,6 +23,9 @@ const Layout = () => {
               <LinkContainer to="/convert">
                 <Nav.Link>Converter 🎵</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/quakers-track">
+                <Nav.Link>Quakers Track 🏃‍♂️</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
