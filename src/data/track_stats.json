@@ -7,8 +7,8 @@
     { "athlete": "Skyler Maxwell", "grade": "12", "event": "200m", "mark": "25.15", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" },
     { "athlete": "Silas Hoefferle", "grade": "9", "event": "Hammer Throw", "mark": "169' 10\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
     { "athlete": "Owen Richards", "grade": "11", "event": "Pole Vault", "mark": "12' 6\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
+    { "athlete": "Bryan Tobey", "grade": "12", "event": "110m Hurdles", "mark": "16.00", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top Finish" },
     { "athlete": "Edie Lane", "grade": "11", "event": "3000m", "mark": "11:45.01", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top 10" },
-    { "athlete": "Charlie Grand", "grade": "11", "event": "3000m", "mark": "10:30.91", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "7th (PR)" },
     { "athlete": "Girls 4x100m", "grade": "Varsity", "event": "Relay", "mark": "48.36", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" }
   ],
   "full_meet_archive": {
@@ -20,11 +20,10 @@
       { "athlete": "Walker Brown", "event": "200m", "mark": "22.86", "place": "2nd", "points": 8 },
       { "athlete": "Silas Hoefferle", "event": "Hammer Throw", "mark": "169' 10\"", "place": "2nd", "points": 8 },
       { "athlete": "Owen Richards", "event": "Pole Vault", "mark": "12' 6\"", "place": "2nd", "points": 8 },
+      { "athlete": "Bryan Tobey", "event": "110m Hurdles", "mark": "16.00", "place": "Finals", "points": 4 },
       { "athlete": "Kendra Satine", "event": "100m", "mark": "12.57", "place": "3rd", "points": 6 },
-      { "athlete": "Kendra Satine", "event": "Long Jump", "mark": "16' 11.5\"", "place": "Top Finish", "points": 4 },
       { "athlete": "Charlie Grand", "event": "3000m", "mark": "10:30.91", "place": "7th", "points": 2 },
       { "athlete": "Edie Lane", "event": "3000m", "mark": "11:45.01", "place": "Top 10", "points": 1 },
-      { "athlete": "Anthony Gario", "event": "4x100m Relay", "mark": "45.84", "place": "Top Finish", "points": 2 },
       { "athlete": "Michael Diehl", "event": "Pole Vault", "mark": "8' 6\"", "place": "14th", "points": 0 }
     ],
     "Central Division Championships (May 17)": [
@@ -32,8 +31,7 @@
       { "athlete": "Skyler Maxwell", "event": "800m", "mark": "2:18.37", "place": "1st", "points": 10 },
       { "athlete": "Kendra Satine", "event": "100m", "mark": "12.41", "place": "2nd", "points": 8 },
       { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.57", "place": "1st", "points": 10 },
-      { "athlete": "Lane Aaronian", "event": "800m", "mark": "2:03.55", "place": "3rd", "points": 6 },
-      { "athlete": "Tyson Ajakaije", "event": "4x100m Relay", "mark": "45.86", "place": "Top Finish", "points": 4 }
+      { "athlete": "Lane Aaronian", "event": "800m", "mark": "2:03.55", "place": "3rd", "points": 6 }
     ]
   },
   "meet_schedule": [
@@ -53,10 +51,10 @@
       { "name": "Lane Aaronian", "year": "So.", "hometown": "Providence, RI", "events": "Mid-Distance" },
       { "name": "Silas Hoefferle", "year": "Fr.", "hometown": "Providence, RI", "events": "Throws" },
       { "name": "Owen Richards", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Baseball" },
+      { "name": "Bryan Tobey", "year": "Sr.", "hometown": "Providence, RI", "events": "Hurdles" },
       { "name": "Michael Diehl", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Relays" },
       { "name": "Braden Phyfe", "year": "Sr.", "hometown": "Pawtucket, RI", "events": "Distance" },
-      { "name": "Ian Whiteley", "year": "Sr.", "hometown": "Providence, RI", "events": "Distance" },
-      { "name": "Anthony Gario", "year": "So.", "hometown": "Providence, RI", "events": "Sprints" }
+      { "name": "Ian Whiteley", "year": "Sr.", "hometown": "Providence, RI", "events": "Distance" }
     ],
     "girls": [
       { "name": "Skyler Maxwell", "year": "Sr.", "hometown": "Providence, RI", "events": "Mid-Distance" },
@@ -72,9 +70,10 @@
     ]
   },
   "coaches": [
-    { "name": "Matty Bennett", "role": "Head Coach", "specialty": "Distance/Strategy" },
-    { "name": "Nathaniel Shaw", "role": "Math Teacher & Coach", "specialty": "Distance/Sprints" },
-    { "name": "Audrey Trowbridge", "role": "Coach (LHS)", "specialty": "Sprints/Hurdles" }
+    { "name": "Matty Bennett", "role": "Head Coach", "specialty": "Distance/Strategy", "link": "https://www.mosesbrown.org/athletics/teams/track-field-varsity-boys" },
+    { "name": "Tom Andrew", "role": "Head Coach (35+ years)", "specialty": "Track & Soccer Legend", "link": "https://www.mosesbrown.org/athletics/teams/track-field-varsity-girls" },
+    { "name": "LeAnn Brown", "role": "Head Coach (Girls)", "specialty": "Global Leadership PhD", "link": "https://www.riil.org/schools/moses-brown-school" },
+    { "name": "Nathaniel Shaw", "role": "Math Teacher & Coach", "specialty": "Throws/Jumps", "link": "https://www.mosesbrown.org/summer/camps" }
   ],
   "school_records": [
     { "event": "100m Dash", "athlete": "Walker Brown", "mark": "10.93", "year": "2026" },
@@ -83,6 +82,8 @@
     { "event": "800m Run", "athlete": "Sophia Gorriaran", "mark": "2:00.65", "year": "2022" },
     { "event": "800m Run (Boys)", "athlete": "Thomas Speltz", "mark": "1:54.68", "year": "2023" },
     { "event": "1500m Run", "athlete": "Eli Ziegler", "mark": "3:59.56", "year": "2024" },
+    { "event": "110m Hurdles", "athlete": "Bryan Tobey", "mark": "16.00", "year": "2026" },
+    { "event": "Long Jump", "athlete": "Don Blount", "mark": "24' 0.5\"", "year": "1936" },
     { "event": "Pole Vault", "athlete": "Gabe Lane", "mark": "11' 6\"", "year": "2024" },
     { "event": "Hammer Throw", "athlete": "Owen Spira", "mark": "216' 5\"", "year": "2024" }
   ],
