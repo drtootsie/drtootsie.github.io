@@ -22,7 +22,9 @@
       { "athlete": "Owen Richards", "event": "Pole Vault", "mark": "12' 6\"", "place": "2nd", "points": 8 },
       { "athlete": "Edie Lane", "event": "3000m", "mark": "11:45.01", "place": "Top 10", "points": 1 },
       { "athlete": "Charlie Grand", "event": "3000m", "mark": "10:30.91", "place": "7th", "points": 2 },
-      { "athlete": "Charlie Grand", "event": "1500m", "mark": "4:34.54", "place": "11th", "points": 0 }
+      { "athlete": "Charlie Grand", "event": "1500m", "mark": "4:34.54", "place": "11th", "points": 0 },
+      { "athlete": "Anthony Gario", "event": "100m", "mark": "12.41", "place": "Finals", "points": 0 },
+      { "athlete": "Leila Hopkins", "event": "High Jump", "mark": "5' 2\"", "place": "2nd", "points": 8 }
     ],
     "Central Division Championships (May 17)": [
       { "athlete": "Walker Brown", "event": "100m", "mark": "10.93", "place": "1st", "points": 10 },
