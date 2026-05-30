@@ -1,57 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Table, Badge, ListGroup, Button, Tabs, Tab, Form } from 'react-bootstrap';
-
-const RECENT_PERFORMANCES = [
-  { athlete: "Walker Brown", grade: "12", event: "100m", mark: "10.93s", meet: "Central Division Champs", date: "May 26, 2026", rank: "1st" },
-  { athlete: "Skyler Maxwell", grade: "11", event: "600m", mark: "1:33.5", meet: "RI Indoor State Champs", date: "Feb 2026", rank: "1st (Record)" },
-  { athlete: "Ben Glew", grade: "11", event: "1500m", mark: "4:10.55", meet: "Central Division Champs", date: "May 26, 2026", rank: "3rd" },
-  { athlete: "Walker Brown", grade: "12", event: "200m", mark: "22.86s", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
-  { athlete: "Lane Aaronian", grade: "10", event: "800m", mark: "2:03.55", meet: "Class C Champs", date: "May 30, 2026", rank: "3rd" },
-  { athlete: "Jay Champlin", grade: "11", event: "3000m", mark: "9:15.20", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
-  { athlete: "Gabe Lane", grade: "12", event: "Pole Vault", mark: "13' 0\"", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" }
-];
-
-const FULL_MEET_ARCHIVE = {
-  "Central Division Championships": [
-    { athlete: "Walker Brown", event: "100m", mark: "10.93s", place: "1st", points: 10 },
-    { athlete: "Skyler Maxwell", event: "400m", mark: "55.89", place: "1st", points: 10 },
-    { athlete: "Skyler Maxwell", event: "200m", mark: "25.15", place: "1st", points: 10 },
-    { athlete: "Ben Glew", event: "1500m", mark: "4:10.55", place: "3rd", points: 6 },
-    { athlete: "Silas Hoefferle", event: "Triple Jump", mark: "38' 5\"", place: "4th", points: 4 },
-    { athlete: "Aiden Pirrucello", event: "Triple Jump", mark: "38' 3\"", place: "5th", points: 2 },
-    { athlete: "Lane Aaronian", event: "800m", mark: "2:03.55", place: "8th", points: 0 },
-    { athlete: "Girls 4x400m", event: "Relay", mark: "4:12.10", place: "2nd", points: 8 },
-    { athlete: "Girls 4x800m", event: "Relay", mark: "10:05.40", place: "3rd", points: 6 }
-  ],
-  "Class C Championships": [
-    { athlete: "Walker Brown", event: "200m", mark: "22.86s", place: "1st", points: 10 },
-    { athlete: "Jay Champlin", event: "3000m", mark: "9:15.20", place: "1st", points: 10 },
-    { athlete: "Gabe Lane", event: "Pole Vault", mark: "13' 0\"", place: "1st", points: 10 },
-    { athlete: "Lane Aaronian", event: "800m", mark: "2:03.55", place: "3rd", points: 6 },
-    { athlete: "Alex Zinit", event: "200m", mark: "23.40", place: "4th", points: 4 }
-  ]
-};
-
-const MEET_SCHEDULE = [
-  { date: "Apr 4", meet: "Knights of Columbus Relays", location: "Providence, RI", status: "Completed" },
-  { date: "Apr 17", meet: "Quaker Invitational (Home)", location: "Moses Brown", status: "Completed" },
-  { date: "May 2", meet: "Classical Classic", location: "Conley Stadium", status: "Completed" },
-  { date: "May 26", meet: "Central Division Championships", location: "Cranston West", status: "Completed" },
-  { date: "May 30", meet: "RIIL Class C Championships", location: "Ponaganset", status: "Completed" },
-  { date: "Jun 6", meet: "RIIL State Championships", location: "Brown Stadium", status: "Upcoming" },
-  { date: "Jun 13", meet: "New England Championships", location: "TBD", status: "Pending" }
-];
-
-const CHAMPIONSHIPS = [
-  { sport: "Outdoor Track (Boys)", type: "State Champions", years: ["1927", "1936"] },
-  { sport: "Outdoor Track (Boys)", type: "Class C Champions", years: ["2024"] },
-  { sport: "Outdoor Track (Girls)", type: "Class C Champions", years: ["2020", "2021", "2022", "2023", "2024"] },
-  { sport: "Indoor Track (Boys)", type: "Class B Champions", years: ["1961", "1965", "1966"] },
-  { sport: "Cross Country (Girls)", type: "Class C Champions", years: ["2021", "2025"] }
-];
+import trackData from '../../data/track_stats.json';
 
 const MosesBrownTrack = () => {
-  const [selectedMeet, setSelectedMeet] = useState("Central Division Championships");
+  const [selectedMeet, setSelectedMeet] = useState(Object.keys(trackData.full_meet_archive)[0]);
 
   return (
     <Container className="py-5">
@@ -86,7 +38,7 @@ const MosesBrownTrack = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {RECENT_PERFORMANCES.map((res, i) => (
+                  {trackData.recent_performances.map((res, i) => (
                     <tr key={i} className="align-middle">
                       <td className="ps-4 fw-bold">
                         {res.athlete} <Badge bg="secondary" className="ms-1 small">{res.grade}</Badge>
@@ -116,7 +68,7 @@ const MosesBrownTrack = () => {
                     value={selectedMeet} 
                     onChange={(e) => setSelectedMeet(e.target.value)}
                   >
-                    {Object.keys(FULL_MEET_ARCHIVE).map(meet => (
+                    {Object.keys(trackData.full_meet_archive).map(meet => (
                       <option key={meet} value={meet}>{meet}</option>
                     ))}
                   </Form.Select>
@@ -135,7 +87,7 @@ const MosesBrownTrack = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {FULL_MEET_ARCHIVE[selectedMeet].map((res, i) => (
+                  {trackData.full_meet_archive[selectedMeet] && trackData.full_meet_archive[selectedMeet].map((res, i) => (
                     <tr key={i}>
                       <td className="ps-4 fw-bold">{res.athlete}</td>
                       <td>{res.event}</td>
@@ -156,7 +108,7 @@ const MosesBrownTrack = () => {
             <Card.Header className="bg-primary text-white fw-bold">2026 Outdoor Calendar</Card.Header>
             <Card.Body className="p-0">
               <ListGroup variant="flush">
-                {MEET_SCHEDULE.map((m, i) => (
+                {trackData.meet_schedule.map((m, i) => (
                   <ListGroup.Item key={i} className="py-3 px-4 d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
                       <div className="text-center me-4" style={{ minWidth: '60px' }}>
@@ -181,7 +133,7 @@ const MosesBrownTrack = () => {
         {/* History Tab */}
         <Tab eventKey="history" title="Legacy & History">
           <Row className="g-4 mt-1">
-            {CHAMPIONSHIPS.map((ch, i) => (
+            {trackData.championships.map((ch, i) => (
               <Col md={6} lg={4} key={i}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
