@@ -1,15 +1,36 @@
-import React from 'react';
-import { Container, Row, Col, Card, Table, Badge, ListGroup, Button, Tabs, Tab } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Table, Badge, ListGroup, Button, Tabs, Tab, Form } from 'react-bootstrap';
 
 const RECENT_PERFORMANCES = [
   { athlete: "Walker Brown", grade: "12", event: "100m", mark: "10.93s", meet: "Central Division Champs", date: "May 26, 2026", rank: "1st" },
   { athlete: "Skyler Maxwell", grade: "11", event: "600m", mark: "1:33.5", meet: "RI Indoor State Champs", date: "Feb 2026", rank: "1st (Record)" },
-  { athlete: "Ben Glew", grade: "11", event: "1500m", mark: "4:10.55", meet: "Central Division Champs", date: "May 26, 2026", rank: "2nd" },
+  { athlete: "Ben Glew", grade: "11", event: "1500m", mark: "4:10.55", meet: "Central Division Champs", date: "May 26, 2026", rank: "3rd" },
   { athlete: "Walker Brown", grade: "12", event: "200m", mark: "22.86s", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
   { athlete: "Lane Aaronian", grade: "10", event: "800m", mark: "2:03.55", meet: "Class C Champs", date: "May 30, 2026", rank: "3rd" },
   { athlete: "Jay Champlin", grade: "11", event: "3000m", mark: "9:15.20", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" },
   { athlete: "Gabe Lane", grade: "12", event: "Pole Vault", mark: "13' 0\"", meet: "Class C Champs", date: "May 30, 2026", rank: "1st" }
 ];
+
+const FULL_MEET_ARCHIVE = {
+  "Central Division Championships": [
+    { athlete: "Walker Brown", event: "100m", mark: "10.93s", place: "1st", points: 10 },
+    { athlete: "Skyler Maxwell", event: "400m", mark: "55.89", place: "1st", points: 10 },
+    { athlete: "Skyler Maxwell", event: "200m", mark: "25.15", place: "1st", points: 10 },
+    { athlete: "Ben Glew", event: "1500m", mark: "4:10.55", place: "3rd", points: 6 },
+    { athlete: "Silas Hoefferle", event: "Triple Jump", mark: "38' 5\"", place: "4th", points: 4 },
+    { athlete: "Aiden Pirrucello", event: "Triple Jump", mark: "38' 3\"", place: "5th", points: 2 },
+    { athlete: "Lane Aaronian", event: "800m", mark: "2:03.55", place: "8th", points: 0 },
+    { athlete: "Girls 4x400m", event: "Relay", mark: "4:12.10", place: "2nd", points: 8 },
+    { athlete: "Girls 4x800m", event: "Relay", mark: "10:05.40", place: "3rd", points: 6 }
+  ],
+  "Class C Championships": [
+    { athlete: "Walker Brown", event: "200m", mark: "22.86s", place: "1st", points: 10 },
+    { athlete: "Jay Champlin", event: "3000m", mark: "9:15.20", place: "1st", points: 10 },
+    { athlete: "Gabe Lane", event: "Pole Vault", mark: "13' 0\"", place: "1st", points: 10 },
+    { athlete: "Lane Aaronian", event: "800m", mark: "2:03.55", place: "3rd", points: 6 },
+    { athlete: "Alex Zinit", event: "200m", mark: "23.40", place: "4th", points: 4 }
+  ]
+};
 
 const MEET_SCHEDULE = [
   { date: "Apr 4", meet: "Knights of Columbus Relays", location: "Providence, RI", status: "Completed" },
@@ -30,12 +51,14 @@ const CHAMPIONSHIPS = [
 ];
 
 const MosesBrownTrack = () => {
+  const [selectedMeet, setSelectedMeet] = useState("Central Division Championships");
+
   return (
     <Container className="py-5">
       <Row className="mb-4 align-items-center">
         <Col md={8}>
           <h1 className="display-4 fw-bold text-primary">Quakers Performance Hub 🏃‍♂️</h1>
-          <p className="lead text-muted">Moses Brown Track & XC - Season Stats & Meet Schedule</p>
+          <p className="lead text-muted">Moses Brown Track & XC - Season Stats & Meet Archive</p>
         </Col>
         <Col md={4} className="text-md-end">
           <Badge bg="dark" className="fs-5 p-2 px-3 shadow-sm">MB Athletics</Badge>
@@ -43,12 +66,12 @@ const MosesBrownTrack = () => {
       </Row>
 
       <Tabs defaultActiveKey="athletes" id="coach-tabs" className="mb-4 nav-pills custom-pills">
-        {/* Athlete Results Tab */}
-        <Tab eventKey="athletes" title="Athlete Results">
+        {/* Top PRs Tab */}
+        <Tab eventKey="athletes" title="Top Marks">
           <Card className="shadow-sm border-0">
             <Card.Header className="bg-primary text-white d-flex justify-content-between align-items-center">
-              <span className="fw-bold">2026 Meet Results & PRs</span>
-              <Badge bg="light" text="dark">Live Updates</Badge>
+              <span className="fw-bold">2026 Season Leaders</span>
+              <Badge bg="light" text="dark">Updated: May 30</Badge>
             </Card.Header>
             <Card.Body className="p-0">
               <Table responsive hover className="mb-0">
@@ -78,17 +101,59 @@ const MosesBrownTrack = () => {
                 </tbody>
               </Table>
             </Card.Body>
-            <Card.Footer className="bg-white text-center py-3">
-              <Button variant="outline-primary" size="sm" className="me-2" href="https://ri.milesplit.com/teams/1044-moses-brown-school" target="_blank">Full Team Roster</Button>
-              <Button variant="outline-primary" size="sm" href="https://www.athletic.net/TrackAndField/School.aspx?SchoolID=2341" target="_blank">Athlete Histories</Button>
-            </Card.Footer>
+          </Card>
+        </Tab>
+
+        {/* Meet Archive Tab */}
+        <Tab eventKey="archive" title="Meet Archive">
+          <Card className="shadow-sm border-0">
+            <Card.Header className="bg-dark text-white p-3">
+              <Row className="align-items-center">
+                <Col md={6}><span className="fw-bold">Full Team Results</span></Col>
+                <Col md={6}>
+                  <Form.Select 
+                    size="sm" 
+                    value={selectedMeet} 
+                    onChange={(e) => setSelectedMeet(e.target.value)}
+                  >
+                    {Object.keys(FULL_MEET_ARCHIVE).map(meet => (
+                      <option key={meet} value={meet}>{meet}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+              </Row>
+            </Card.Header>
+            <Card.Body className="p-0">
+              <Table responsive hover className="mb-0">
+                <thead className="bg-light">
+                  <tr>
+                    <th className="ps-4">Athlete</th>
+                    <th>Event</th>
+                    <th>Mark</th>
+                    <th>Place</th>
+                    <th>Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {FULL_MEET_ARCHIVE[selectedMeet].map((res, i) => (
+                    <tr key={i}>
+                      <td className="ps-4 fw-bold">{res.athlete}</td>
+                      <td>{res.event}</td>
+                      <td>{res.mark}</td>
+                      <td><Badge bg={parseInt(res.place) === 1 ? 'warning' : 'secondary'} text={parseInt(res.place) === 1 ? 'dark' : 'white'}>{res.place}</Badge></td>
+                      <td className="fw-bold text-success">+{res.points}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Card.Body>
           </Card>
         </Tab>
 
         {/* Meet Schedule Tab */}
-        <Tab eventKey="schedule" title="Meet Schedule">
+        <Tab eventKey="schedule" title="Season Schedule">
           <Card className="shadow-sm border-0">
-            <Card.Header className="bg-dark text-white fw-bold">2026 Outdoor Season Schedule</Card.Header>
+            <Card.Header className="bg-primary text-white fw-bold">2026 Outdoor Calendar</Card.Header>
             <Card.Body className="p-0">
               <ListGroup variant="flush">
                 {MEET_SCHEDULE.map((m, i) => (
@@ -114,7 +179,7 @@ const MosesBrownTrack = () => {
         </Tab>
 
         {/* History Tab */}
-        <Tab eventKey="history" title="Program History">
+        <Tab eventKey="history" title="Legacy & History">
           <Row className="g-4 mt-1">
             {CHAMPIONSHIPS.map((ch, i) => (
               <Col md={6} lg={4} key={i}>
@@ -137,7 +202,7 @@ const MosesBrownTrack = () => {
         <Col>
           <div className="p-4 bg-primary text-white rounded-4 shadow">
             <h3>Go Quakers! 🟦⬜</h3>
-            <p className="mb-0 opacity-75">Moses Brown Athletics - Legacy of Excellence since 1784</p>
+            <p className="mb-0 opacity-75">Moses Brown Athletics - Excellence in Providence</p>
           </div>
         </Col>
       </Row>
