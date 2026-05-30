@@ -14,6 +14,15 @@ const MosesBrownTrack = () => {
         </Col>
         <Col md={4} className="text-md-end">
           <Button 
+            variant="outline-primary" 
+            size="sm" 
+            className="me-2"
+            href="https://ri.milesplit.com/teams/14717-moses-brown-school" 
+            target="_blank"
+          >
+            📊 MileSplit
+          </Button>
+          <Button 
             variant="outline-secondary" 
             size="sm" 
             className="me-2"
