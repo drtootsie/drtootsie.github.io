@@ -1,14 +1,15 @@
 import React from 'react';
 
-const StickFigure = ({ theme, emotion = 'happy' }) => {
-  // Themes: default, space, knight, wizard, robot
+const SingleStickFigure = ({ xOffset = 0, scale = 1, theme, emotion = 'happy' }) => {
   const isSpace = theme === 'space';
   const isKnight = theme === 'knight';
   const isWizard = theme === 'wizard';
   const isRobot = theme === 'robot';
+  const isBedtime = theme === 'bedtime';
+  const isZoo = theme === 'zoo';
 
   return (
-    <svg width="200" height="250" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+    <g transform={`translate(${xOffset}, 0) scale(${scale})`}>
       {/* Head */}
       <circle cx="100" cy="60" r="30" fill="none" stroke="black" strokeWidth="3" />
       
@@ -43,6 +44,13 @@ const StickFigure = ({ theme, emotion = 'happy' }) => {
         </>
       )}
 
+      {isBedtime && (
+        <>
+          <path d="M 70 40 Q 100 0 130 40" fill="#a1ccff" stroke="black" strokeWidth="2" />
+          <circle cx="130" cy="40" r="5" fill="white" stroke="black" />
+        </>
+      )}
+
       {isKnight && (
         <>
           <path d="M 70 30 L 130 30 L 100 10 Z" fill="gray" stroke="black" />
@@ -53,7 +61,6 @@ const StickFigure = ({ theme, emotion = 'happy' }) => {
       {isWizard && (
         <>
           <path d="M 60 40 L 140 40 L 100 0 Z" fill="purple" stroke="black" />
-          <circle cx="160" cy="90" r="8" fill="yellow" className="wizard-sparkle" />
           <line x1="140" y1="140" x2="160" y2="90" stroke="brown" strokeWidth="4" />
         </>
       )}
@@ -66,11 +73,49 @@ const StickFigure = ({ theme, emotion = 'happy' }) => {
         </>
       )}
 
-      {isBedtime && (
+      {isZoo && (
         <>
-          <path d="M 70 40 Q 100 0 130 40" fill="#a1ccff" stroke="black" strokeWidth="2" />
-          <circle cx="130" cy="40" r="5" fill="white" stroke="black" />
-          <path d="M 160 30 L 165 40 L 175 40 L 167 48 L 170 58 L 160 52 L 150 58 L 153 48 L 145 40 L 155 40 Z" fill="yellow" />
+          <rect x="80" y="20" width="40" height="20" fill="tan" stroke="black" />
+          <line x1="140" y1="140" x2="160" y2="160" stroke="black" strokeWidth="3" />
+          <circle cx="165" cy="165" r="10" fill="none" stroke="black" strokeWidth="2" />
+        </>
+      )}
+    </g>
+  );
+};
+
+const StickFigure = ({ theme, count = 1 }) => {
+  const isBedtime = theme === 'bedtime';
+  const isZoo = theme === 'zoo';
+
+  return (
+    <svg width="250" height="250" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+      {/* Background for themes */}
+      {isBedtime && (
+        <path d="M 230 30 L 235 40 L 245 40 L 237 48 L 240 58 L 230 52 L 220 58 L 223 48 L 215 40 L 225 40 Z" fill="yellow" />
+      )}
+      {isZoo && (
+        <g>
+          <rect x="220" y="150" width="60" height="70" fill="none" stroke="brown" strokeWidth="2" />
+          <line x1="220" y1="165" x2="280" y2="165" stroke="brown" strokeWidth="2" />
+          <line x1="220" y1="180" x2="280" y2="180" stroke="brown" strokeWidth="2" />
+          <text x="235" y="210" style={{ fontSize: '20px' }}>🦁</text>
+        </g>
+      )}
+
+      {/* Render 1, 2, or 3 figures */}
+      {count === 1 && <SingleStickFigure xOffset={50} theme={theme} />}
+      {count === 2 && (
+        <>
+          <SingleStickFigure xOffset={20} scale={0.8} theme={theme} />
+          <SingleStickFigure xOffset={120} scale={0.8} theme={theme} />
+        </>
+      )}
+      {count >= 3 && (
+        <>
+          <SingleStickFigure xOffset={0} scale={0.7} theme={theme} />
+          <SingleStickFigure xOffset={85} scale={0.7} theme={theme} />
+          <SingleStickFigure xOffset={170} scale={0.7} theme={theme} />
         </>
       )}
     </svg>

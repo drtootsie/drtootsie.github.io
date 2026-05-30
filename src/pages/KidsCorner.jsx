@@ -4,6 +4,7 @@ import EmojiMatch from '../components/KidsCorner/EmojiMatch';
 import PicturePuzzle from '../components/KidsCorner/PicturePuzzle';
 import SimonSays from '../components/KidsCorner/SimonSays';
 import TreasureMap from '../components/KidsCorner/TreasureMap';
+import BlockFit from '../components/KidsCorner/BlockFit';
 
 const KidsCorner = () => {
   const [activeTab, setActiveTab] = useState('emoji');
@@ -33,6 +34,9 @@ const KidsCorner = () => {
               <Nav.Item>
                 <Nav.Link eventKey="treasure" className="rounded-pill px-4">Treasure Hunt</Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="blocks" className="rounded-pill px-4">Block Fit</Nav.Link>
+              </Nav.Item>
             </Nav>
 
             <Card className="shadow border-0 rounded-4 overflow-hidden mb-5">
@@ -49,6 +53,9 @@ const KidsCorner = () => {
                   </Tab.Pane>
                   <Tab.Pane eventKey="treasure">
                     <TreasureMap />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="blocks">
+                    <BlockFit />
                   </Tab.Pane>
                 </Tab.Content>
               </Card.Body>
