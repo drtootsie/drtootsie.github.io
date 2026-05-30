@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card, Spinner, Badge } from 'react-bootstrap';
-import StickFigure from '../components/StoryStudio/StickFigure';
+import StickFigure from '../../components/StoryStudio/StickFigure';
 
 const MORALS = {
   friendship: "They learned that even the biggest challenges are easy when you have friends by your side.",

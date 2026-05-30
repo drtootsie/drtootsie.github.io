@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Layout = () => {
@@ -20,32 +20,37 @@ const Layout = () => {
               <LinkContainer to="/hub">
                 <Nav.Link>Family Hub 🚀</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/convert">
-                <Nav.Link>Converter 🎵</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/quakers-track">
-                <Nav.Link>Quakers Track 🏃‍♂️</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/about">
-                <Nav.Link>About</Nav.Link>
-              </LinkContainer>
+              
+              <NavDropdown title="Projects & Tools 🛠️" id="projects-dropdown">
+                <LinkContainer to="/projects/clue">
+                  <NavDropdown.Item>Clue Investigator</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/projects/kids-corner">
+                  <NavDropdown.Item>Kids Corner 🎈</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/projects/story-time">
+                  <NavDropdown.Item>AI Story Studio ✨</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/projects/quakers-track">
+                  <NavDropdown.Item>Quakers Track 🏃‍♂️</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/projects/convert">
+                  <NavDropdown.Item>Playlist Converter 🎵</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Divider />
+                <LinkContainer to="/projects/mocktail-recipes">
+                  <NavDropdown.Item>Mocktail Recipes</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/projects">
+                  <NavDropdown.Item>GitHub Work</NavDropdown.Item>
+                </LinkContainer>
+              </NavDropdown>
+
               <LinkContainer to="/blog">
                 <Nav.Link>Blog</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/story-time">
-                <Nav.Link>Story Time</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/mocktail-recipes">
-                <Nav.Link>Mocktail Recipes</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/clue">
-                <Nav.Link>Clue Tracker</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/kids-corner">
-                <Nav.Link>Kids Corner 🎈</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/projects">
-                <Nav.Link>Projects</Nav.Link>
+              <LinkContainer to="/about">
+                <Nav.Link>About</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

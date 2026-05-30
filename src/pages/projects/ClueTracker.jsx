@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Nav, Tab, Button, Form, Badge } from 'react-bootstrap';
-import GameSetup from '../components/ClueTracker/GameSetup';
-import TurnLogger from '../components/ClueTracker/TurnLogger';
-import TrackingGrid from '../components/ClueTracker/TrackingGrid';
-import StrategicAdvice from '../components/ClueTracker/StrategicAdvice';
-import { useClueEngine } from '../hooks/useClueEngine';
+import GameSetup from '../../components/ClueTracker/GameSetup';
+import TurnLogger from '../../components/ClueTracker/TurnLogger';
+import TrackingGrid from '../../components/ClueTracker/TrackingGrid';
+import StrategicAdvice from '../../components/ClueTracker/StrategicAdvice';
+import { useClueEngine } from '../../hooks/useClueEngine';
 
 const ClueTracker = () => {
   const [activeTab, setActiveTab] = useState('setup');

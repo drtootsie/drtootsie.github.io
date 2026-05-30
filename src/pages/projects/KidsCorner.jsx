@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Tab, Nav } from 'react-bootstrap';
-import EmojiMatch from '../components/KidsCorner/EmojiMatch';
-import PicturePuzzle from '../components/KidsCorner/PicturePuzzle';
-import SimonSays from '../components/KidsCorner/SimonSays';
-import TreasureMap from '../components/KidsCorner/TreasureMap';
-import BlockFit from '../components/KidsCorner/BlockFit';
+import EmojiMatch from '../../components/KidsCorner/EmojiMatch';
+import PicturePuzzle from '../../components/KidsCorner/PicturePuzzle';
+import SimonSays from '../../components/KidsCorner/SimonSays';
+import TreasureMap from '../../components/KidsCorner/TreasureMap';
+import BlockFit from '../../components/KidsCorner/BlockFit';
 
 const KidsCorner = () => {
   const [activeTab, setActiveTab] = useState('emoji');

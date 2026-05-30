@@ -83,19 +83,19 @@
       "name": "Clue Investigator Tool",
       "description": "An advanced logic-based tracking tool for the board game Clue, featuring a custom deduction engine and strategic advice.",
       "keywords": ["React", "Logic Engine", "Game Strategy", "Bootstrap"],
-      "url": "/#/clue"
+      "url": "/#/projects/clue"
     },
     {
       "name": "Kids Corner Games",
       "description": "A collection of interactive puzzle games designed for children, including memory matches, picture puzzles, and logic games.",
       "keywords": ["React", "Educational Games", "Kids", "Mobile Friendly"],
-      "url": "/#/kids-corner"
+      "url": "/#/projects/kids-corner"
     },
     {
       "name": "Quakers Track Coaches Corner",
       "description": "A dedicated dashboard for Moses Brown High School Track & XC, tracking season PRs, coaching projects, and team updates.",
       "keywords": ["React", "Data Tracking", "Athletics", "Coaching"],
-      "url": "/#/quakers-track"
+      "url": "/#/projects/quakers-track"
     },
     {
       "name": "Clinical Platform Modernization",
