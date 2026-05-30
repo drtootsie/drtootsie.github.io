@@ -86,6 +86,12 @@
       "url": "/#/clue"
     },
     {
+      "name": "Kids Corner Games",
+      "description": "A collection of interactive puzzle games designed for children, including memory matches, picture puzzles, and logic games.",
+      "keywords": ["React", "Educational Games", "Kids", "Mobile Friendly"],
+      "url": "/#/kids-corner"
+    },
+    {
       "name": "Clinical Platform Modernization",
       "description": "Led the strategic initiative to modernize legacy clinical systems, improving regulatory compliance and user experience.",
       "keywords": ["Leadership", "Legacy Modernization", "Healthcare IT"],

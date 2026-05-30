@@ -32,6 +32,9 @@ const Layout = () => {
               <LinkContainer to="/clue">
                 <Nav.Link>Clue Tracker</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/kids-corner">
+                <Nav.Link>Kids Corner 🎈</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/projects">
                 <Nav.Link>Projects</Nav.Link>
               </LinkContainer>

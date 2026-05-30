@@ -7,6 +7,7 @@ import StoryTime from './pages/StoryTime';
 import MocktailRecipes from './pages/MocktailRecipes';
 import GitHubProjects from './pages/GitHubProjects';
 import ClueTracker from './pages/ClueTracker';
+import KidsCorner from './pages/KidsCorner';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="mocktail-recipes" element={<MocktailRecipes />} />
           <Route path="projects" element={<GitHubProjects />} />
           <Route path="clue" element={<ClueTracker />} />
+          <Route path="kids-corner" element={<KidsCorner />} />
         </Route>
       </Routes>
     </Router>
