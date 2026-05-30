@@ -126,9 +126,13 @@ const ClueTracker = () => {
                       <h3>Turn Logger</h3>
                       <Badge bg="info">{engine.turns.length} turns logged</Badge>
                     </div>
-                    <TurnLogger config={engine.config} onAddTurn={engine.addTurn} />
+                    {engine.config ? (
+                      <TurnLogger config={engine.config} onAddTurn={engine.addTurn} />
+                    ) : (
+                      <div className="alert alert-warning">Please complete the Game Setup first.</div>
+                    )}
                     
-                    {engine.turns.length > 0 && (
+                    {engine.config && engine.turns.length > 0 && (
                       <div className="mt-4">
                         <h6>Recent History</h6>
                         <div className="list-group list-group-flush border rounded">
@@ -151,19 +155,27 @@ const ClueTracker = () => {
                   <Tab.Pane eventKey="grid">
                     <h3>Logic Grid</h3>
                     <p className="text-muted">Visual matrix of deduced ownership.</p>
-                    <TrackingGrid 
-                      config={engine.config} 
-                      knowledge={engine.knowledge} 
-                      allCards={engine.allCards} 
-                    />
+                    {engine.config && engine.knowledge ? (
+                      <TrackingGrid 
+                        config={engine.config} 
+                        knowledge={engine.knowledge} 
+                        allCards={engine.allCards} 
+                      />
+                    ) : (
+                      <div className="alert alert-info">Logic grid will appear after setup.</div>
+                    )}
                   </Tab.Pane>
 
                   <Tab.Pane eventKey="advice">
                     <h3>Investigator Advice</h3>
-                    <StrategicAdvice 
-                      config={engine.config} 
-                      knowledge={engine.knowledge} 
-                    />
+                    {engine.config && engine.knowledge ? (
+                      <StrategicAdvice 
+                        config={engine.config} 
+                        knowledge={engine.knowledge} 
+                      />
+                    ) : (
+                      <div className="alert alert-info">Advice will appear after setup.</div>
+                    )}
                   </Tab.Pane>
                 </Tab.Content>
               </Card.Body>
