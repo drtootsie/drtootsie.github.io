@@ -20,6 +20,9 @@ const Layout = () => {
               <LinkContainer to="/hub">
                 <Nav.Link>Family Hub 🚀</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/convert">
+                <Nav.Link>Converter 🎵</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
