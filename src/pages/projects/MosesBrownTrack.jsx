@@ -148,6 +148,62 @@ const MosesBrownTrack = () => {
           </Card>
         </Tab>
 
+        {/* Team Roster Tab */}
+        <Tab eventKey="roster" title="2026 Roster">
+          <Row>
+            <Col lg={8}>
+              <Card className="shadow-sm border-0 mb-4">
+                <Card.Header className="bg-primary text-white fw-bold">Varsity Athletes</Card.Header>
+                <Card.Body className="p-0">
+                  <Table responsive hover className="mb-0">
+                    <thead className="bg-light">
+                      <tr>
+                        <th className="ps-4">Athlete</th>
+                        <th>Year</th>
+                        <th>Events</th>
+                        <th>Hometown</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="table-secondary"><td colSpan="4" className="ps-4 fw-bold small text-uppercase">Girls Squad</td></tr>
+                      {trackData.roster.girls.map((a, i) => (
+                        <tr key={`g-${i}`}>
+                          <td className="ps-4 fw-bold">{a.name}</td>
+                          <td>{a.year}</td>
+                          <td>{a.events}</td>
+                          <td>{a.hometown}</td>
+                        </tr>
+                      ))}
+                      <tr className="table-secondary"><td colSpan="4" className="ps-4 fw-bold small text-uppercase">Boys Squad</td></tr>
+                      {trackData.roster.boys.map((a, i) => (
+                        <tr key={`b-${i}`}>
+                          <td className="ps-4 fw-bold">{a.name}</td>
+                          <td>{a.year}</td>
+                          <td>{a.events}</td>
+                          <td>{a.hometown}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={4}>
+              <Card className="shadow-sm border-0">
+                <Card.Header className="bg-dark text-white fw-bold">Coaching Staff</Card.Header>
+                <ListGroup variant="flush">
+                  {trackData.coaches.map((c, i) => (
+                    <ListGroup.Item key={i} className="py-3">
+                      <div className="fw-bold text-primary">{c.name}</div>
+                      <div className="small text-muted">{c.role} • {c.specialty}</div>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Card>
+            </Col>
+          </Row>
+        </Tab>
+
         {/* History Tab */}
         <Tab eventKey="history" title="Legacy & History">
           <Row className="g-4 mt-1">

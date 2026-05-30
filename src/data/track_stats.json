@@ -45,6 +45,39 @@
     { "date": "Jun 6", "meet": "RIIL State Championships", "location": "Brown Stadium", "status": "Upcoming" },
     { "date": "Jun 13", "meet": "New England Championships", "location": "Noble HS, ME", "status": "Pending" }
   ],
+  "roster": {
+    "boys": [
+      { "name": "Walker Brown", "year": "Sr.", "hometown": "Providence, RI", "events": "Sprints" },
+      { "name": "Tyson Ajakaije", "year": "So.", "hometown": "Providence, RI", "events": "Sprints/Jumps" },
+      { "name": "Charlie Grand", "year": "Jr.", "hometown": "Providence, RI", "events": "Distance" },
+      { "name": "Lane Aaronian", "year": "So.", "hometown": "Providence, RI", "events": "Mid-Distance" },
+      { "name": "Silas Hoefferle", "year": "Fr.", "hometown": "Providence, RI", "events": "Throws" },
+      { "name": "Owen Richards", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Baseball" },
+      { "name": "Michael Diehl", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Relays" },
+      { "name": "Braden Phyfe", "year": "Sr.", "hometown": "Pawtucket, RI", "events": "Distance" },
+      { "name": "Ian Whiteley", "year": "Sr.", "hometown": "Providence, RI", "events": "Distance" },
+      { "name": "Anthony Gario", "year": "So.", "hometown": "Providence, RI", "events": "Sprints" }
+    ],
+    "girls": [
+      { "name": "Skyler Maxwell", "year": "Sr.", "hometown": "Providence, RI", "events": "Mid-Distance" },
+      { "name": "Kendra Satine", "year": "Sr.", "hometown": "Barrington, RI", "events": "Sprints/Jumps" },
+      { "name": "Amaya Felder", "year": "So.", "hometown": "Pawtucket, RI", "events": "Sprints" },
+      { "name": "Rose Couto", "year": "So.", "hometown": "Rehoboth, MA", "events": "Sprints/Mid-Dist" },
+      { "name": "Edie Lane", "year": "Jr.", "hometown": "Westport, MA", "events": "Distance" },
+      { "name": "Lola Baill", "year": "Jr.", "hometown": "Providence, RI", "events": "Distance" },
+      { "name": "Sadie Dougherty", "year": "So.", "hometown": "Bristol, RI", "events": "Distance" },
+      { "name": "Crosby Craig", "year": "Sr.", "hometown": "Little Compton, RI", "events": "Distance" },
+      { "name": "Nell Lorincz", "year": "Sr.", "hometown": "S. Kingstown, RI", "events": "Distance" },
+      { "name": "Sophia Mocco", "year": "Sr.", "hometown": "Providence, RI", "events": "Mid-Distance" }
+    ]
+  },
+  "coaches": [
+    { "name": "Matty Bennett", "role": "Head Coach (Outdoor)", "specialty": "Distance/Strategy" },
+    { "name": "Nathaniel Shaw", "role": "Coach", "specialty": "Sprints" },
+    { "name": "Audrey Trowbridge", "role": "Coach", "specialty": "Field Events" },
+    { "name": "Joe Leavell", "role": "Coach", "specialty": "Hurdles" },
+    { "name": "Lee Webb", "role": "Coach", "specialty": "Throws" }
+  ],
   "championships": [
     { "sport": "Outdoor Track (Boys)", "type": "State Champions", "years": ["1927", "1936"] },
     { "sport": "Outdoor Track (Boys)", "type": "Class C Champions", "years": ["2024"] },
