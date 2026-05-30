@@ -65,6 +65,14 @@ const StickFigure = ({ theme, emotion = 'happy' }) => {
           <circle cx="100" cy="15" r="3" fill="red" />
         </>
       )}
+
+      {isBedtime && (
+        <>
+          <path d="M 70 40 Q 100 0 130 40" fill="#a1ccff" stroke="black" strokeWidth="2" />
+          <circle cx="130" cy="40" r="5" fill="white" stroke="black" />
+          <path d="M 160 30 L 165 40 L 175 40 L 167 48 L 170 58 L 160 52 L 150 58 L 153 48 L 145 40 L 155 40 Z" fill="yellow" />
+        </>
+      )}
     </svg>
   );
 };

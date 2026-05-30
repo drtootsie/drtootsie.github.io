@@ -19,6 +19,10 @@ const STORY_TEMPLATES = {
     "Beep boop! The little robot wanted to learn how to paint. Using its mechanical arms, it created a masterpiece that looked exactly like a giant bowl of ice cream.",
     "In the city of the future, a robot named Geary decided to go on a vacation to the beach. It had to wear lots of waterproof oil so it wouldn't get rusty while building sandcastles!"
   ],
+  bedtime: [
+    "As the stars began to twinkle over Lee's Summit, a cozy little bear snuggled into a bed made of soft clouds. The moon whispered a secret story about a land where dreams come true, and soon, the bear was fast asleep.",
+    "The sun went down, and the world became quiet and still. A tiny owl flapped its wings and flew to the top of a giant oak tree. It watched as all the forest friends tucked themselves in for a night of wonderful, happy dreams."
+  ],
   default: [
     "Once upon a time, a curious friend went on a big adventure in their own backyard. They found a secret door hidden under a leaf that led to a world where everything was made of marshmallows.",
     "It was a sunny day when the adventurer decided to build a giant fort. Inside the fort, they found a map that led to a treasure chest filled with chocolate coins!"
@@ -48,6 +52,8 @@ const StoryTime = () => {
         selectedTheme = 'wizard';
       } else if (lowerPrompt.includes('robot') || lowerPrompt.includes('computer') || lowerPrompt.includes('beep') || lowerPrompt.includes('future')) {
         selectedTheme = 'robot';
+      } else if (lowerPrompt.includes('bedtime') || lowerPrompt.includes('sleep') || lowerPrompt.includes('night') || lowerPrompt.includes('dream')) {
+        selectedTheme = 'bedtime';
       }
 
       const templates = STORY_TEMPLATES[selectedTheme];
