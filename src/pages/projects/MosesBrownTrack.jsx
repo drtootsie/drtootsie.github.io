@@ -13,6 +13,15 @@ const MosesBrownTrack = () => {
           <p className="lead text-muted">Moses Brown Track & XC - Season Stats & Meet Archive</p>
         </Col>
         <Col md={4} className="text-md-end">
+          <Button 
+            variant="outline-secondary" 
+            size="sm" 
+            className="me-2"
+            href="https://github.com/drtootsie/drtootsie.github.io/actions/workflows/sync_stats.yml" 
+            target="_blank"
+          >
+            🔄 Sync Dashboard
+          </Button>
           <Badge bg="dark" className="fs-5 p-2 px-3 shadow-sm">MB Athletics</Badge>
         </Col>
       </Row>
