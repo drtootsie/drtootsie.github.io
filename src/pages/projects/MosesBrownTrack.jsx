@@ -191,19 +191,19 @@ const MosesBrownTrack = () => {
             <Col sm={6} md={3}>
               <div className="p-3 bg-white rounded shadow-sm">
                 <div className="fw-bold">Skyler Maxwell</div>
-                <div className="small text-primary">400m / 800m</div>
+                <div className="small text-primary">200m / 400m / 800m</div>
               </div>
             </Col>
             <Col sm={6} md={3}>
               <div className="p-3 bg-white rounded shadow-sm">
-                <div className="fw-bold">Jay Champlin</div>
-                <div className="small text-primary">3000m</div>
+                <div className="fw-bold">Silas Hoefferle</div>
+                <div className="small text-primary">Hammer Throw</div>
               </div>
             </Col>
             <Col sm={6} md={3}>
               <div className="p-3 bg-white rounded shadow-sm">
-                <div className="fw-bold">Girls 4x400m</div>
-                <div className="small text-primary">Relay</div>
+                <div className="fw-bold">Owen Richards</div>
+                <div className="small text-primary">Pole Vault</div>
               </div>
             </Col>
           </Row>
