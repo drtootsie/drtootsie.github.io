@@ -80,6 +80,12 @@
       "url": "https://github.com/drtootsie/drtootsie.github.io"
     },
     {
+      "name": "Clue Investigator Tool",
+      "description": "An advanced logic-based tracking tool for the board game Clue, featuring a custom deduction engine and strategic advice.",
+      "keywords": ["React", "Logic Engine", "Game Strategy", "Bootstrap"],
+      "url": "/#/clue"
+    },
+    {
       "name": "Clinical Platform Modernization",
       "description": "Led the strategic initiative to modernize legacy clinical systems, improving regulatory compliance and user experience.",
       "keywords": ["Leadership", "Legacy Modernization", "Healthcare IT"],
