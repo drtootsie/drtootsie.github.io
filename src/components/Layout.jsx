@@ -9,13 +9,16 @@ const Layout = () => {
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="flex-shrink-0">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Pepper's Website</Navbar.Brand>
+            <Navbar.Brand>Pancoast Adventures</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <LinkContainer to="/">
                 <Nav.Link>Home</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/hub">
+                <Nav.Link>Family Hub 🚀</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>

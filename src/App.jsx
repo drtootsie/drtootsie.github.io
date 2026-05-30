@@ -8,6 +8,7 @@ import MocktailRecipes from './pages/MocktailRecipes';
 import GitHubProjects from './pages/GitHubProjects';
 import ClueTracker from './pages/ClueTracker';
 import KidsCorner from './pages/KidsCorner';
+import InteractiveHub from './pages/InteractiveHub';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="projects" element={<GitHubProjects />} />
           <Route path="clue" element={<ClueTracker />} />
           <Route path="kids-corner" element={<KidsCorner />} />
+          <Route path="hub" element={<InteractiveHub />} />
         </Route>
       </Routes>
     </Router>
