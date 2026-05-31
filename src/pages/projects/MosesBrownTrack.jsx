@@ -60,6 +60,7 @@ const MosesBrownTrack = () => {
                     <tr key={i} className="align-middle">
                       <td className="ps-4 fw-bold">
                         {res.athlete} <Badge bg="secondary" className="ms-1 small">{res.grade}</Badge>
+                        {res.state_qualified && <Badge bg="danger" className="ms-2 small shadow-sm">STATE QUALIFIED</Badge>}
                       </td>
                       <td>{res.event}</td>
                       <td><Badge bg="success" className="fs-6">{res.mark}</Badge></td>
@@ -168,7 +169,10 @@ const MosesBrownTrack = () => {
                       <tr className="table-secondary"><td colSpan="4" className="ps-4 fw-bold small text-uppercase">Girls Squad</td></tr>
                       {trackData.roster.girls.map((a, i) => (
                         <tr key={`g-${i}`}>
-                          <td className="ps-4 fw-bold">{a.name}</td>
+                          <td className="ps-4 fw-bold">
+                            {a.name}
+                            {a.qualified && <Badge bg="danger" className="ms-2 small">ST</Badge>}
+                          </td>
                           <td>{a.year}</td>
                           <td>{a.events}</td>
                           <td>{a.hometown}</td>
@@ -177,7 +181,10 @@ const MosesBrownTrack = () => {
                       <tr className="table-secondary"><td colSpan="4" className="ps-4 fw-bold small text-uppercase">Boys Squad</td></tr>
                       {trackData.roster.boys.map((a, i) => (
                         <tr key={`b-${i}`}>
-                          <td className="ps-4 fw-bold">{a.name}</td>
+                          <td className="ps-4 fw-bold">
+                            {a.name}
+                            {a.qualified && <Badge bg="danger" className="ms-2 small">ST</Badge>}
+                          </td>
                           <td>{a.year}</td>
                           <td>{a.events}</td>
                           <td>{a.hometown}</td>

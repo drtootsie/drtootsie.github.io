@@ -1,36 +1,36 @@
 {
   "recent_performances": [
-    { "athlete": "Skyler Maxwell", "grade": "12", "event": "400m", "mark": "55.89", "meet": "Glenn D. Loucks Games", "date": "May 9, 2026", "rank": "1st (PR)" },
-    { "athlete": "Walker Brown", "grade": "12", "event": "100m", "mark": "10.93", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Record)" },
-    { "athlete": "Kendra Satine", "grade": "12", "event": "100m", "mark": "12.35", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Prelims)" },
-    { "athlete": "Walker Brown", "grade": "12", "event": "200m", "mark": "22.86", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
-    { "athlete": "Skyler Maxwell", "grade": "12", "event": "200m", "mark": "25.15", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" },
-    { "athlete": "Silas Hoefferle", "grade": "9", "event": "Hammer Throw", "mark": "169' 10\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
-    { "athlete": "Owen Richards", "grade": "11", "event": "Pole Vault", "mark": "12' 6\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd" },
-    { "athlete": "Bryan Tobey", "grade": "12", "event": "110m Hurdles", "mark": "16.00", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top Finish" },
-    { "athlete": "Edie Lane", "grade": "11", "event": "3000m", "mark": "11:45.01", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top 10" },
-    { "athlete": "Girls 4x100m", "grade": "Varsity", "event": "Relay", "mark": "48.36", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st" }
+    { "athlete": "Skyler Maxwell", "grade": "12", "event": "400m", "mark": "55.89", "meet": "Glenn D. Loucks Games", "date": "May 9, 2026", "rank": "1st (PR)", "state_qualified": true },
+    { "athlete": "Walker Brown", "grade": "12", "event": "100m", "mark": "10.93", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Record)", "state_qualified": true },
+    { "athlete": "Kendra Satine", "grade": "12", "event": "100m", "mark": "12.35", "meet": "Central Division Champs", "date": "May 17, 2026", "rank": "1st (Prelims)", "state_qualified": true },
+    { "athlete": "Walker Brown", "grade": "12", "event": "200m", "mark": "22.86", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd", "state_qualified": false },
+    { "athlete": "Skyler Maxwell", "grade": "12", "event": "200m", "mark": "25.15", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st", "state_qualified": true },
+    { "athlete": "Silas Hoefferle", "grade": "9", "event": "Hammer Throw", "mark": "169' 10\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd", "state_qualified": false },
+    { "athlete": "Owen Richards", "grade": "11", "event": "Pole Vault", "mark": "12' 6\"", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "2nd", "state_qualified": true },
+    { "athlete": "Bryan Tobey", "grade": "12", "event": "110m Hurdles", "mark": "16.00", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top Finish", "state_qualified": false },
+    { "athlete": "Edie Lane", "grade": "11", "event": "3000m", "mark": "11:45.01", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "Top 10", "state_qualified": false },
+    { "athlete": "Girls 4x100m", "grade": "Varsity", "event": "Relay", "mark": "48.36", "meet": "Class C Champs", "date": "May 23, 2026", "rank": "1st", "state_qualified": true }
   ],
   "full_meet_archive": {
     "RIIL Class C Championships (May 23)": [
-      { "athlete": "Skyler Maxwell", "event": "200m", "mark": "25.15", "place": "1st", "points": 10 },
-      { "athlete": "Skyler Maxwell", "event": "400m", "mark": "56.56", "place": "1st", "points": 10 },
-      { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.36", "place": "1st", "points": 10 },
-      { "athlete": "Girls 4x400m", "event": "Relay", "mark": "4:12.95", "place": "1st", "points": 10 },
+      { "athlete": "Skyler Maxwell", "event": "200m", "mark": "25.15", "place": "1st", "points": 10, "state_qualified": true },
+      { "athlete": "Skyler Maxwell", "event": "400m", "mark": "56.56", "place": "1st", "points": 10, "state_qualified": true },
+      { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.36", "place": "1st", "points": 10, "state_qualified": true },
+      { "athlete": "Girls 4x400m", "event": "Relay", "mark": "4:12.95", "place": "1st", "points": 10, "state_qualified": true },
       { "athlete": "Walker Brown", "event": "200m", "mark": "22.86", "place": "2nd", "points": 8 },
       { "athlete": "Silas Hoefferle", "event": "Hammer Throw", "mark": "169' 10\"", "place": "2nd", "points": 8 },
-      { "athlete": "Owen Richards", "event": "Pole Vault", "mark": "12' 6\"", "place": "2nd", "points": 8 },
+      { "athlete": "Owen Richards", "event": "Pole Vault", "mark": "12' 6\"", "place": "2nd", "points": 8, "state_qualified": true },
       { "athlete": "Bryan Tobey", "event": "110m Hurdles", "mark": "16.00", "place": "Finals", "points": 4 },
-      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.57", "place": "3rd", "points": 6 },
+      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.57", "place": "3rd", "points": 6, "state_qualified": true },
       { "athlete": "Charlie Grand", "event": "3000m", "mark": "10:30.91", "place": "7th", "points": 2 },
       { "athlete": "Edie Lane", "event": "3000m", "mark": "11:45.01", "place": "Top 10", "points": 1 },
       { "athlete": "Michael Diehl", "event": "Pole Vault", "mark": "8' 6\"", "place": "14th", "points": 0 }
     ],
     "Central Division Championships (May 17)": [
-      { "athlete": "Walker Brown", "event": "100m", "mark": "10.93", "place": "1st", "points": 10 },
-      { "athlete": "Skyler Maxwell", "event": "800m", "mark": "2:18.37", "place": "1st", "points": 10 },
-      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.41", "place": "2nd", "points": 8 },
-      { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.57", "place": "1st", "points": 10 },
+      { "athlete": "Walker Brown", "event": "100m", "mark": "10.93", "place": "1st", "points": 10, "state_qualified": true },
+      { "athlete": "Skyler Maxwell", "event": "800m", "mark": "2:18.37", "place": "1st", "points": 10, "state_qualified": true },
+      { "athlete": "Kendra Satine", "event": "100m", "mark": "12.41", "place": "2nd", "points": 8, "state_qualified": true },
+      { "athlete": "Girls 4x100m", "event": "Relay", "mark": "48.57", "place": "1st", "points": 10, "state_qualified": true },
       { "athlete": "Lane Aaronian", "event": "800m", "mark": "2:03.55", "place": "3rd", "points": 6 }
     ]
   },
@@ -45,20 +45,20 @@
   ],
   "roster": {
     "boys": [
-      { "name": "Walker Brown", "year": "Sr.", "hometown": "Providence, RI", "events": "Sprints" },
+      { "name": "Walker Brown", "year": "Sr.", "hometown": "Providence, RI", "events": "Sprints", "qualified": true },
       { "name": "Tyson Ajakaije", "year": "So.", "hometown": "Providence, RI", "events": "Sprints/Jumps" },
       { "name": "Charlie Grand", "year": "Jr.", "hometown": "Providence, RI", "events": "Distance" },
       { "name": "Lane Aaronian", "year": "So.", "hometown": "Providence, RI", "events": "Mid-Distance" },
       { "name": "Silas Hoefferle", "year": "Fr.", "hometown": "Providence, RI", "events": "Throws" },
-      { "name": "Owen Richards", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Baseball" },
+      { "name": "Owen Richards", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Baseball", "qualified": true },
       { "name": "Bryan Tobey", "year": "Sr.", "hometown": "Providence, RI", "events": "Hurdles" },
       { "name": "Michael Diehl", "year": "Jr.", "hometown": "Providence, RI", "events": "Field/Relays" },
       { "name": "Braden Phyfe", "year": "Sr.", "hometown": "Pawtucket, RI", "events": "Distance" },
       { "name": "Ian Whiteley", "year": "Sr.", "hometown": "Providence, RI", "events": "Distance" }
     ],
     "girls": [
-      { "name": "Skyler Maxwell", "year": "Sr.", "hometown": "Providence, RI", "events": "Mid-Distance" },
-      { "name": "Kendra Satine", "year": "Sr.", "hometown": "Barrington, RI", "events": "Sprints/Jumps" },
+      { "name": "Skyler Maxwell", "year": "Sr.", "hometown": "Providence, RI", "events": "Mid-Distance", "qualified": true },
+      { "name": "Kendra Satine", "year": "Sr.", "hometown": "Barrington, RI", "events": "Sprints/Jumps", "qualified": true },
       { "name": "Amaya Felder", "year": "So.", "hometown": "Pawtucket, RI", "events": "Sprints" },
       { "name": "Rose Couto", "year": "So.", "hometown": "Rehoboth, MA", "events": "Sprints/Mid-Dist" },
       { "name": "Edie Lane", "year": "Jr.", "hometown": "Westport, MA", "events": "Distance" },
