@@ -9,11 +9,18 @@ const COLORS = [
 ];
 
 const SimonSays = () => {
-  const [sequence, setSequence] = useState([]);
+  const [sequence, setSequence] = useState(() => {
+    const saved = localStorage.getItem('simon_sequence');
+    return saved ? JSON.parse(saved) : [];
+  });
   const [userSequence, setUserSequence] = useState([]);
   const [isDisplaying, setIsDisplaying] = useState(false);
   const [activeColor, setActiveColor] = useState(null);
-  const [message, setMessage] = useState('Press Start to Play!');
+  const [message, setMessage] = useState(sequence.length > 0 ? 'Welcome back! Resume your turn.' : 'Press Start to Play!');
+
+  useEffect(() => {
+    localStorage.setItem('simon_sequence', JSON.stringify(sequence));
+  }, [sequence]);
 
   const startNextLevel = useCallback((currentSequence) => {
     const nextColor = Math.floor(Math.random() * 4);

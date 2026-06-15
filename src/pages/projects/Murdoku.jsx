@@ -4,8 +4,14 @@ import { CHARACTERS, FURNITURE_ICONS, TEMPLATES } from './murdokuTemplates';
 import './Murdoku.css';
 
 const Murdoku = () => {
-  const [templateIndex, setTemplateIndex] = useState(0);
-  const [board, setBoard] = useState(Array(81).fill(null));
+  const [templateIndex, setTemplateIndex] = useState(() => {
+    const saved = localStorage.getItem('murdoku_template_index');
+    return saved !== null ? parseInt(saved) : 0;
+  });
+  const [board, setBoard] = useState(() => {
+    const saved = localStorage.getItem('murdoku_board');
+    return saved !== null ? JSON.parse(saved) : Array(81).fill(null);
+  });
   const [selectedChar, setSelectedChar] = useState(CHARACTERS[0].id);
   const [conflicts, setConflicts] = useState([]);
   const [showWinModal, setShowWinModal] = useState(false);
@@ -16,9 +22,11 @@ const Murdoku = () => {
   const template = useMemo(() => TEMPLATES[templateIndex], [templateIndex]);
 
   useEffect(() => {
+    localStorage.setItem('murdoku_board', JSON.stringify(board));
+    localStorage.setItem('murdoku_template_index', templateIndex.toString());
     validateBoard();
     validateClues();
-  }, [board, template]);
+  }, [board, templateIndex, template]);
 
   const handleCellClick = (index) => {
     if (template.furniture[index]) return;
@@ -130,9 +138,19 @@ const Murdoku = () => {
   };
 
   const nextPuzzle = () => {
-    setTemplateIndex((templateIndex + 1) % TEMPLATES.length);
-    setBoard(Array(81).fill(null));
+    const nextIdx = (templateIndex + 1) % TEMPLATES.length;
+    setTemplateIndex(nextIdx);
+    const emptyBoard = Array(81).fill(null);
+    setBoard(emptyBoard);
+    localStorage.setItem('murdoku_board', JSON.stringify(emptyBoard));
+    localStorage.setItem('murdoku_template_index', nextIdx.toString());
     setShowWinModal(false);
+  };
+
+  const resetBoard = () => {
+    const emptyBoard = Array(81).fill(null);
+    setBoard(emptyBoard);
+    localStorage.setItem('murdoku_board', JSON.stringify(emptyBoard));
   };
 
   const renderCell = (index) => {
@@ -237,50 +255,50 @@ const Murdoku = () => {
           ))}
         </div>
         <div className="action-row px-2 pb-2 d-flex gap-2">
-          <Button variant="danger" className="flex-grow-1 fw-bold" onClick={checkSolution}>ACCUSE 👨‍⚖️</Button>
-          <Button variant="outline-secondary" onClick={() => setBoard(Array(81).fill(null))}>🔄</Button>
+        <Button variant="danger" className="flex-grow-1 fw-bold" onClick={checkSolution}>ACCUSE 👨‍⚖️</Button>
+        <Button variant="outline-secondary" onClick={resetBoard}>🔄</Button>
         </div>
-      </div>
+        </div>
 
-      {/* Mobile Clue Overlay */}
-      <Modal show={showClueOverlay} onHide={() => setShowClueOverlay(false)} centered fullscreen="md-down">
+        {/* Mobile Clue Overlay */}
+        <Modal show={showClueOverlay} onHide={() => setShowClueOverlay(false)} centered fullscreen="md-down">
         <Modal.Header closeButton>
-          <Modal.Title>Case Clues</Modal.Title>
+        <Modal.Title>Case Clues</Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
-          <ListGroup variant="flush">
-            {template.clues.map((clue, idx) => (
-              <ListGroup.Item key={idx} className="border-0 d-flex align-items-start py-3">
-                <span className={`me-3 clue-bullet ${clueStatus[idx]}`}>
-                  {clueStatus[idx] === 'valid' ? '✅' : clueStatus[idx] === 'invalid' ? '❌' : '📌'}
-                </span>
-                <span className={clueStatus[idx] === 'valid' ? 'text-muted text-decoration-line-through' : ''}>
-                  {clue.text}
-                </span>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
+        <ListGroup variant="flush">
+          {template.clues.map((clue, idx) => (
+            <ListGroup.Item key={idx} className="border-0 d-flex align-items-start py-3">
+              <span className={`me-3 clue-bullet ${clueStatus[idx]}`}>
+                {clueStatus[idx] === 'valid' ? '✅' : clueStatus[idx] === 'invalid' ? '❌' : '📌'}
+              </span>
+              <span className={clueStatus[idx] === 'valid' ? 'text-muted text-decoration-line-through' : ''}>
+                {clue.text}
+              </span>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowClueOverlay(false)}>Close Case File</Button>
+        <Button variant="secondary" onClick={() => setShowClueOverlay(false)}>Close Case File</Button>
         </Modal.Footer>
-      </Modal>
+        </Modal>
 
-      {/* Win Modal */}
-      <Modal show={showWinModal} onHide={() => setShowWinModal(false)} centered>
+        {/* Win Modal */}
+        <Modal show={showWinModal} onHide={() => setShowWinModal(false)} centered>
         <Modal.Body className="text-center p-5">
-          <div className="display-1 mb-4">🎉</div>
-          <h2 className="fw-bold mb-3">Case Closed!</h2>
-          <p className="fs-5 mb-4">
-            Excellent work, detective! You correctly identified <strong>{murderer?.name} {murderer?.icon}</strong> as the killer.
-          </p>
-          <Button variant="success" size="lg" className="w-100" onClick={nextPuzzle}>
-            Next Puzzle
-          </Button>
+        <div className="display-1 mb-4">🎉</div>
+        <h2 className="fw-bold mb-3">Case Closed!</h2>
+        <p className="fs-5 mb-4">
+          Excellent work, detective! You correctly identified <strong>{murderer?.name} {murderer?.icon}</strong> as the killer.
+        </p>
+        <Button variant="success" size="lg" className="w-100" onClick={nextPuzzle}>
+          Next Puzzle
+        </Button>
         </Modal.Body>
-      </Modal>
-    </Container>
-  );
-};
+        </Modal>
+        </Container>
+        );
+        };
 
-export default Murdoku;
+        export default Murdoku;

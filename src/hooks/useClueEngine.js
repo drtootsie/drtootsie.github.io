@@ -1,9 +1,31 @@
 import { useState, useMemo, useEffect } from 'react';
 
 export const useClueEngine = () => {
-  const [config, setConfig] = useState(null);
-  const [myCards, setMyCards] = useState([]);
-  const [turns, setTurns] = useState([]);
+  const [config, setConfig] = useState(() => {
+    const saved = localStorage.getItem('clue_config');
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [myCards, setMyCards] = useState(() => {
+    const saved = localStorage.getItem('clue_my_cards');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [turns, setTurns] = useState(() => {
+    const saved = localStorage.getItem('clue_turns');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    if (config) localStorage.setItem('clue_config', JSON.stringify(config));
+    else localStorage.removeItem('clue_config');
+  }, [config]);
+
+  useEffect(() => {
+    localStorage.setItem('clue_my_cards', JSON.stringify(myCards));
+  }, [myCards]);
+
+  useEffect(() => {
+    localStorage.setItem('clue_turns', JSON.stringify(turns));
+  }, [turns]);
 
   // knowledge matrix: [playerIndex][cardName] = status (1: Has, -1: Doesn't Have, 0: Unknown)
   const [matrix, setMatrix] = useState({});
@@ -18,6 +40,11 @@ export const useClueEngine = () => {
     setMyCards([]);
     setTurns([]);
     setMatrix({});
+    if (!newConfig) {
+      localStorage.removeItem('clue_config');
+      localStorage.removeItem('clue_my_cards');
+      localStorage.removeItem('clue_turns');
+    }
   };
 
   const addTurn = (turn) => {

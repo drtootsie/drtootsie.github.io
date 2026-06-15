@@ -4,14 +4,34 @@ import { Row, Col, Button, Card } from 'react-bootstrap';
 const GRID_SIZE = 5;
 
 const TreasureMap = () => {
-  const [playerPos, setPlayerPos] = useState({ x: 0, y: 0 });
-  const [treasurePos, setTreasurePos] = useState({ x: 4, y: 4 });
-  const [obstacles, setObstacles] = useState([]);
-  const [gameState, setGameState] = useState('playing'); // playing, won
+  const [playerPos, setPlayerPos] = useState(() => {
+    const saved = localStorage.getItem('treasure_player_pos');
+    return saved ? JSON.parse(saved) : { x: 0, y: 0 };
+  });
+  const [treasurePos, setTreasurePos] = useState(() => {
+    const saved = localStorage.getItem('treasure_pos');
+    return saved ? JSON.parse(saved) : { x: 4, y: 4 };
+  });
+  const [obstacles, setObstacles] = useState(() => {
+    const saved = localStorage.getItem('treasure_obstacles');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [gameState, setGameState] = useState(() => {
+    return localStorage.getItem('treasure_game_state') || 'playing';
+  });
 
   useEffect(() => {
-    initializeGame();
+    if (obstacles.length === 0) {
+      initializeGame();
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('treasure_player_pos', JSON.stringify(playerPos));
+    localStorage.setItem('treasure_pos', JSON.stringify(treasurePos));
+    localStorage.setItem('treasure_obstacles', JSON.stringify(obstacles));
+    localStorage.setItem('treasure_game_state', gameState);
+  }, [playerPos, treasurePos, obstacles, gameState]);
 
   const initializeGame = () => {
     setPlayerPos({ x: 0, y: 0 });
