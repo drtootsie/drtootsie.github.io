@@ -73,35 +73,49 @@ const SimonSays = () => {
   };
 
   return (
-    <div className="text-center">
-      <h4 className="mb-4">Color Copy 🔴🟡🟢🔵</h4>
-      <div className="mb-4 fs-5 fw-bold">{message}</div>
-      <div className="mx-auto" style={{ maxWidth: '300px' }}>
-        <Row className="g-3">
+    <div className="text-center simon-says-container">
+      <h4 className="mb-3">Color Copy 🔴🟡🟢🔵</h4>
+      <div className="mb-3 fs-5 fw-bold message-box" style={{ minHeight: '1.5em' }}>{message}</div>
+      <div className="mx-auto simon-grid" style={{ maxWidth: '400px' }}>
+        <Row className="g-3 g-md-4">
           {COLORS.map((color, index) => (
             <Col xs={6} key={index}>
               <div 
                 onClick={() => handleColorClick(index)}
+                className={`simon-pad ${activeColor === index ? 'active' : ''}`}
                 style={{
-                  height: '120px',
+                  height: 'clamp(100px, 25vw, 150px)',
                   backgroundColor: activeColor === index ? color.active : color.color,
-                  borderRadius: '15px',
+                  borderRadius: '20px',
                   cursor: isDisplaying ? 'default' : 'pointer',
-                  border: '5px solid #fff',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                  transition: 'background-color 0.1s'
+                  border: '6px solid #fff',
+                  boxShadow: '0 6px 12px rgba(0,0,0,0.15)',
+                  transition: 'background-color 0.1s, transform 0.1s'
                 }}
               />
             </Col>
           ))}
         </Row>
       </div>
-      <Button variant="primary" size="lg" className="mt-4 px-5" onClick={startGame} disabled={isDisplaying}>
-        {sequence.length === 0 ? 'Start' : 'Restart'}
-      </Button>
-      {sequence.length > 0 && !isDisplaying && (
-        <div className="mt-3">Score: {sequence.length - 1}</div>
-      )}
+      <div className="controls-area mt-4">
+        <Button variant="primary" size="lg" className="px-5 py-3 fw-bold rounded-pill shadow" onClick={startGame} disabled={isDisplaying}>
+          {sequence.length === 0 ? 'Start' : 'Restart'}
+        </Button>
+        {sequence.length > 0 && !isDisplaying && (
+          <div className="mt-3 fs-4 fw-bold">Score: {sequence.length - 1}</div>
+        )}
+      </div>
+      
+      <style>{`
+        .simon-pad:active {
+          transform: scale(0.95);
+        }
+        @media (max-width: 576px) {
+          .simon-says-container {
+            padding-bottom: 20px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

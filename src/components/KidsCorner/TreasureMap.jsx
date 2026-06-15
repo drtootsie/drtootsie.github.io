@@ -79,14 +79,17 @@ const TreasureMap = () => {
   };
 
   return (
-    <div className="text-center">
-      <h4 className="mb-4">Treasure Hunt 🎁</h4>
-      <div className="mx-auto border bg-light shadow-sm mb-4" style={{ 
+    <div className="text-center treasure-hunt-container">
+      <h4 className="mb-3">Treasure Hunt 🎁</h4>
+      <div className="mx-auto border bg-light shadow-sm mb-4 treasure-grid" style={{ 
         display: 'grid', 
         gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`, 
-        width: '300px', 
-        height: '300px',
-        gap: '2px'
+        width: '100%',
+        maxWidth: '350px',
+        aspectRatio: '1 / 1',
+        gap: '4px',
+        padding: '4px',
+        borderRadius: '8px'
       }}>
         {Array.from({ length: GRID_SIZE * GRID_SIZE }).map((_, i) => {
           const x = i % GRID_SIZE;
@@ -94,8 +97,8 @@ const TreasureMap = () => {
           return (
             <div 
               key={i} 
-              className="bg-white d-flex align-items-center justify-content-center"
-              style={{ fontSize: '2rem' }}
+              className="bg-white d-flex align-items-center justify-content-center rounded"
+              style={{ fontSize: 'clamp(1.5rem, 8vw, 2.5rem)' }}
             >
               {renderCell(x, y)}
             </div>
@@ -105,19 +108,44 @@ const TreasureMap = () => {
 
       {gameState === 'won' ? (
         <div className="mb-4">
-          <div className="h4 text-success fw-bold">You found the treasure! 🎉</div>
-          <Button variant="primary" onClick={initializeGame}>Play Again</Button>
+          <div className="h4 text-success fw-bold mb-3">You found the treasure! 🎉</div>
+          <Button variant="primary" size="lg" className="rounded-pill px-5 shadow" onClick={initializeGame}>Play Again</Button>
         </div>
       ) : (
-        <div className="d-flex flex-column align-items-center">
-          <Button variant="secondary" className="mb-2" style={{ width: '60px' }} onClick={() => move(0, -1)}>↑</Button>
+        <div className="d-flex flex-column align-items-center mobile-dpad">
+          <Button variant="dark" className="mb-2 dpad-btn" onClick={() => move(0, -1)}>↑</Button>
           <div className="d-flex gap-2">
-            <Button variant="secondary" style={{ width: '60px' }} onClick={() => move(-1, 0)}>←</Button>
-            <Button variant="secondary" style={{ width: '60px' }} onClick={() => move(0, 1)}>↓</Button>
-            <Button variant="secondary" style={{ width: '60px' }} onClick={() => move(1, 0)}>→</Button>
+            <Button variant="dark" className="dpad-btn" onClick={() => move(-1, 0)}>←</Button>
+            <Button variant="dark" className="dpad-btn" onClick={() => move(0, 1)}>↓</Button>
+            <Button variant="dark" className="dpad-btn" onClick={() => move(1, 0)}>→</Button>
           </div>
         </div>
       )}
+
+      <style>{`
+        .dpad-btn {
+          width: 70px;
+          height: 70px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          border-radius: 15px;
+          box-shadow: 0 4px 0 #000;
+          transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .dpad-btn:active {
+          transform: translateY(2px);
+          box-shadow: 0 2px 0 #000;
+        }
+        @media (max-width: 576px) {
+          .treasure-grid {
+            max-width: 280px;
+          }
+          .dpad-btn {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
