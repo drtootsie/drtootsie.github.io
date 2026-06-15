@@ -11,6 +11,7 @@ import PlaylistConverter from './pages/projects/PlaylistConverter';
 import StoryTime from './pages/projects/StoryTime';
 import MocktailRecipes from './pages/projects/MocktailRecipes';
 import GitHubProjects from './pages/projects/GitHubProjects';
+import Murdoku from './pages/projects/Murdoku';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="convert" element={<PlaylistConverter />} />
             <Route path="story-time" element={<StoryTime />} />
             <Route path="mocktail-recipes" element={<MocktailRecipes />} />
+            <Route path="murdoku" element={<Murdoku />} />
           </Route>
         </Route>
       </Routes>

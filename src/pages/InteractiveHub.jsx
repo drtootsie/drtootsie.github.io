@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PugglePatrol from '../components/InteractiveHub/PugglePatrol';
 import AdventureLog from '../components/InteractiveHub/AdventureLog';
 import MocktailMixer from '../components/InteractiveHub/MocktailMixer';
+import MurdokuTeaser from '../components/InteractiveHub/MurdokuTeaser';
 
 const InteractiveHub = () => {
   return (
@@ -17,7 +18,7 @@ const InteractiveHub = () => {
         </Col>
       </Row>
 
-      <Row className="g-4">
+      <Row className="g-4 mb-4">
         <Col lg={4}>
           <PugglePatrol />
         </Col>
@@ -26,6 +27,12 @@ const InteractiveHub = () => {
         </Col>
         <Col lg={4}>
           <MocktailMixer />
+        </Col>
+      </Row>
+
+      <Row className="g-4">
+        <Col lg={4}>
+          <MurdokuTeaser />
         </Col>
       </Row>
 
