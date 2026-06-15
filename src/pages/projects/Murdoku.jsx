@@ -11,6 +11,7 @@ const Murdoku = () => {
   const [showWinModal, setShowWinModal] = useState(false);
   const [murderer, setMurderer] = useState(null);
   const [clueStatus, setClueStatus] = useState([]);
+  const [showClueOverlay, setShowClueOverlay] = useState(false);
 
   const template = useMemo(() => TEMPLATES[templateIndex], [templateIndex]);
 
@@ -114,7 +115,6 @@ const Murdoku = () => {
       return;
     }
 
-    // Identify murderer by room isolation
     const victimIndex = board.indexOf('v');
     const victimRoom = template.rooms[victimIndex];
     const peopleInVictimRoom = board.filter((id, idx) => id && id !== 'v' && template.rooms[idx] === victimRoom);
@@ -166,75 +166,107 @@ const Murdoku = () => {
   };
 
   return (
-    <Container className="py-5 murdoku-game">
-      <Row className="mb-4 text-center">
-        <Col>
-          <h1 className="display-4 fw-bold">Murdoku 🔎</h1>
-          <p className="lead text-muted">Solve the puzzle. Find the killer. Template: {template.name}</p>
-        </Col>
-      </Row>
+    <Container fluid className="p-0 murdoku-game mobile-friendly">
+      <div className="game-header text-center py-3 bg-white border-bottom sticky-top">
+        <h2 className="mb-0 fw-bold">Murdoku 🔎</h2>
+        <div className="small text-muted">{template.name}</div>
+      </div>
 
-      <Row className="g-4">
-        <Col lg={7}>
-          <div className="murdoku-grid shadow">
-            {Array(81).fill(0).map((_, i) => renderCell(i))}
-          </div>
-        </Col>
+      <Container className="py-3 pb-5-mobile">
+        <Row className="g-4">
+          <Col lg={7} className="d-flex justify-content-center align-items-center">
+            <div className="murdoku-grid shadow">
+              {Array(81).fill(0).map((_, i) => renderCell(i))}
+            </div>
+          </Col>
 
-        <Col lg={5}>
-          <Card className="border-0 shadow-sm rounded-4 mb-4">
-            <Card.Header className="bg-dark text-white py-3 rounded-top-4">
-              <h5 className="mb-0">Suspects</h5>
-            </Card.Header>
-            <Card.Body>
-              <div className="suspect-grid">
-                {CHARACTERS.map(char => (
-                  <Button 
-                    key={char.id}
-                    variant={selectedChar === char.id ? char.color : `outline-${char.color}`}
-                    className={`p-2 suspect-btn ${board.indexOf(char.id) !== -1 ? 'placed' : ''}`}
-                    onClick={() => setSelectedChar(char.id)}
-                  >
-                    <div className="fs-4">{char.icon}</div>
-                    <div className="tiny-text fw-bold">{char.name}</div>
-                  </Button>
-                ))}
-              </div>
-            </Card.Body>
-          </Card>
+          <Col lg={5} className="d-none d-lg-block">
+            {/* Desktop Sidebars */}
+            <Card className="border-0 shadow-sm rounded-4 mb-4">
+              <Card.Header className="bg-dark text-white py-3 rounded-top-4">
+                <h5 className="mb-0">Case File & Clues</h5>
+              </Card.Header>
+              <Card.Body className="p-0">
+                <ListGroup variant="flush">
+                  {template.clues.map((clue, idx) => (
+                    <ListGroup.Item key={idx} className="border-0 d-flex align-items-center py-2">
+                      <span className={`me-3 clue-bullet ${clueStatus[idx]}`}>
+                        {clueStatus[idx] === 'valid' ? '✅' : clueStatus[idx] === 'invalid' ? '❌' : '📌'}
+                      </span>
+                      <span className={clueStatus[idx] === 'valid' ? 'text-muted text-decoration-line-through' : ''}>
+                        {clue.text}
+                      </span>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Card.Body>
+            </Card>
 
-          <Card className="border-0 shadow-sm rounded-4 mb-4">
-            <Card.Header className="bg-primary text-white py-3 rounded-top-4">
-              <h5 className="mb-0">Case File & Clues</h5>
-            </Card.Header>
-            <Card.Body className="p-0">
-              <ListGroup variant="flush">
-                {template.clues.map((clue, idx) => (
-                  <ListGroup.Item key={idx} className="border-0 d-flex align-items-center">
-                    <span className={`me-3 clue-bullet ${clueStatus[idx]}`}>
-                      {clueStatus[idx] === 'valid' ? '✅' : clueStatus[idx] === 'invalid' ? '❌' : '📌'}
-                    </span>
-                    <span className={clueStatus[idx] === 'valid' ? 'text-muted text-decoration-line-through' : ''}>
-                      {clue.text}
-                    </span>
-                  </ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Card.Body>
-          </Card>
+            <div className="d-grid gap-2">
+              <Button variant="danger" size="lg" className="fw-bold py-3" onClick={checkSolution}>
+                Accuse Murderer! 👨‍⚖️
+              </Button>
+              <Row className="g-2">
+                <Col><Button variant="outline-secondary" className="w-100" onClick={() => setBoard(Array(81).fill(null))}>Reset Scene</Button></Col>
+                <Col><Button variant="outline-primary" className="w-100" onClick={nextPuzzle}>Next Mystery</Button></Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
-          <div className="d-grid gap-2">
-            <Button variant="danger" size="lg" className="fw-bold py-3" onClick={checkSolution}>
-              Accuse Murderer! 👨‍⚖️
-            </Button>
-            <Row className="g-2">
-              <Col><Button variant="outline-secondary" className="w-100" onClick={() => setBoard(Array(81).fill(null))}>Reset Scene</Button></Col>
-              <Col><Button variant="outline-primary" className="w-100" onClick={nextPuzzle}>Next Mystery</Button></Col>
-            </Row>
-          </div>
-        </Col>
-      </Row>
+      {/* Mobile Floating Controls */}
+      <div className="mobile-clue-trigger d-lg-none" onClick={() => setShowClueOverlay(true)}>
+        <Badge bg="primary" className="p-3 rounded-circle shadow-lg">
+          <div className="fs-3">📋</div>
+          {clueStatus.filter(s => s === 'valid').length}/{template.clues.length}
+        </Badge>
+      </div>
 
+      <div className="mobile-bottom-controls d-lg-none">
+        <div className="suspect-scroller">
+          {CHARACTERS.map(char => (
+            <div 
+              key={char.id}
+              className={`mobile-suspect-item ${selectedChar === char.id ? 'active bg-' + char.color : ''} ${board.indexOf(char.id) !== -1 ? 'placed' : ''}`}
+              onClick={() => setSelectedChar(char.id)}
+            >
+              <div className="icon">{char.icon}</div>
+              <div className="name">{char.name.split(' ').pop()}</div>
+            </div>
+          ))}
+        </div>
+        <div className="action-row px-2 pb-2 d-flex gap-2">
+          <Button variant="danger" className="flex-grow-1 fw-bold" onClick={checkSolution}>ACCUSE 👨‍⚖️</Button>
+          <Button variant="outline-secondary" onClick={() => setBoard(Array(81).fill(null))}>🔄</Button>
+        </div>
+      </div>
+
+      {/* Mobile Clue Overlay */}
+      <Modal show={showClueOverlay} onHide={() => setShowClueOverlay(false)} centered fullscreen="md-down">
+        <Modal.Header closeButton>
+          <Modal.Title>Case Clues</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="p-0">
+          <ListGroup variant="flush">
+            {template.clues.map((clue, idx) => (
+              <ListGroup.Item key={idx} className="border-0 d-flex align-items-start py-3">
+                <span className={`me-3 clue-bullet ${clueStatus[idx]}`}>
+                  {clueStatus[idx] === 'valid' ? '✅' : clueStatus[idx] === 'invalid' ? '❌' : '📌'}
+                </span>
+                <span className={clueStatus[idx] === 'valid' ? 'text-muted text-decoration-line-through' : ''}>
+                  {clue.text}
+                </span>
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowClueOverlay(false)}>Close Case File</Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Win Modal */}
       <Modal show={showWinModal} onHide={() => setShowWinModal(false)} centered>
         <Modal.Body className="text-center p-5">
           <div className="display-1 mb-4">🎉</div>
@@ -242,7 +274,7 @@ const Murdoku = () => {
           <p className="fs-5 mb-4">
             Excellent work, detective! You correctly identified <strong>{murderer?.name} {murderer?.icon}</strong> as the killer.
           </p>
-          <Button variant="success" size="lg" onClick={nextPuzzle}>
+          <Button variant="success" size="lg" className="w-100" onClick={nextPuzzle}>
             Next Puzzle
           </Button>
         </Modal.Body>
