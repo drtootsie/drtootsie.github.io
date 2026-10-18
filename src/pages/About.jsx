@@ -20,7 +20,7 @@ const About = () => {
             I thrive on "nerd things" and cycling through passions just as I did in my youth—whether it's diving deep into new tech stacks, gaming, or exploring the outdoors.
           </p>
           <p className="mt-3 text-muted">
-            Professionally, I serve as the <strong>Director of Engineering at Netsmart</strong>, where I lead multi-disciplinary teams to build compliant, scalable clinical platforms. My background spans from Electrical Engineering to managing international software teams.
+            Professionally, I serve as the <strong>Senior Director of Engineering at Netsmart</strong>, where I lead global, multi-disciplinary teams across the CareConnect and CareFabric interoperability platforms. My background spans from Electrical Engineering to directing international cloud, healthcare interoperability, and AI-augmented engineering teams.
           </p>
         </Col>
       </Row>

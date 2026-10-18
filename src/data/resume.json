@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Pepper Pancoast",
-    "label": "Director of Engineering",
+    "label": "Senior Director of Engineering",
     "email": "pepper.pancoast@example.com",
     "phone": "",
     "url": "https://www.pepperpancoast.com",
-    "summary": "Results-driven engineering leader with a dual background in electrical engineering and business management. Over a decade of experience directing multi-disciplinary teams in clinical and platform development, focusing on regulatory features and modernizing legacy products.",
+    "summary": "Engineering leader with 12+ years of experience building and scaling enterprise cloud platforms and healthcare interoperability networks. At Netsmart, I lead a global organization of ~30 engineers, architects, and managers across the US and India—building and running CareFabric and CareConnect, the core cloud backbone and interoperability engines powering clinical data exchange across Netsmart's EHR ecosystem and national healthcare networks.",
     "location": {
       "city": "Lee's Summit",
       "region": "MO",
@@ -14,42 +14,68 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "pepperpancoast",
-        "url": "https://linkedin.com/in/pepperpancoast"
+        "username": "pepper-pancoast-a3527963",
+        "url": "https://www.linkedin.com/in/pepper-pancoast-a3527963/"
       }
     ]
   },
   "work": [
     {
       "name": "Netsmart",
-      "position": "Director of Engineering",
-      "startDate": "Present",
+      "position": "Senior Director of Engineering (CareFabric & CareConnect Platforms)",
+      "startDate": "Mar 2026",
       "endDate": "Present",
-      "summary": "Leading initiatives in clinical and platform development, focusing on regulatory features and the deprecation of legacy products.",
+      "summary": "Lead a global organization of ~30 engineers, architects, and managers across the US and India, owning Netsmart's enterprise cloud backbone (CareFabric) and healthcare interoperability platform (CareConnect).",
       "highlights": [
-        "Directing multi-disciplinary engineering teams.",
-        "Driving clinical and platform development strategy.",
-        "Overseeing regulatory feature implementation and legacy product modernization."
+        "CareFabric Cloud Platform: Direct the architecture and reliability of Netsmart's shared services backbone on AWS—powering synchronous action routing, Kafka/MSK event streaming, unified clinical data stores, Master Patient Index (MPI), and SMART-on-FHIR identity across multi-tenant EHRs.",
+        "CareConnect & National Networks: Drive engineering delivery across TEFCA / QHIN, Carequality, Certified FHIR R4 APIs, HL7/CDA integration engines, and federal regulatory mandates (ONC HTI-1/HTI-4, CMS-0057-F, 42 CFR Part 2).",
+        "Cloud FinOps & Resiliency: Led a cross-platform AWS optimization initiative delivering six-figure annual recurring savings while advancing multi-region BCDR and edge caching performance.",
+        "AI-Native Engineering: Built and rolled out multi-agent AI workflows (MCP) for automated PR triage, rapid architecture spec lookup, and incident-to-coaching handoffs—cutting diagnostic toil by >90%."
+      ]
+    },
+    {
+      "name": "Netsmart",
+      "position": "Director of Engineering",
+      "startDate": "Mar 2022",
+      "endDate": "Apr 2026",
+      "summary": "Led multi-disciplinary engineering teams across the CareFabric and CareConnect platforms, driving cloud modernization, regulatory compliance, and national network scale.",
+      "highlights": [
+        "Scaled US and India engineering teams owning core platform services, API gateways, clinical data pipelines, and interoperability hubs serving thousands of provider organizations.",
+        "Directed foundational engineering execution enabling Netsmart to become the first Designated QHIN built fully on AWS, supporting 6.5B+ annual clinical queries.",
+        "Spearheaded the modernization and retirement of legacy clinical portals and message brokers into resilient, cloud-native AWS architectures.",
+        "Partnered with executive and product leadership to establish predictable multi-quarter capacity planning, DevSecOps governance, and high-availability SLAs."
       ]
     },
     {
       "name": "Cerner Corporation",
       "position": "Software Engineering Manager",
-      "startDate": "2014",
-      "endDate": "2021",
-      "summary": "Held multiple roles including Team Lead and Software Engineer. Built and led software teams coordinating work across multiple countries and technical stacks.",
+      "startDate": "Jan 2018",
+      "endDate": "Feb 2022",
+      "summary": "Managed software engineering teams and coordinated cross-border clinical platform development across multiple countries, languages, and technical stacks.",
       "highlights": [
-        "Managed software engineering teams and coordinated international development efforts.",
-        "Served as Team Lead and Software Engineer prior to management role.",
-        "Completed Velocity Software Internship."
+        "Directed international software engineering teams, driving agile delivery, capacity planning, and cross-functional alignment.",
+        "Guided career progression, goal setting, and technical mentorship for software engineers and team leads.",
+        "Fostered an engineering-led innovation culture through internal hackathons ('ShipIt' days) to accelerate feature ideation and rapid prototyping."
+      ]
+    },
+    {
+      "name": "Cerner Corporation",
+      "position": "Software Engineer & Team Lead",
+      "startDate": "Feb 2012",
+      "endDate": "Jan 2018",
+      "summary": "Designed and developed core enterprise clinical platform components and internal engineering velocity tooling.",
+      "highlights": [
+        "Architected and built core clinical system components utilizing Java/J2EE, JavaScript, Ruby, and RESTful APIs.",
+        "Built custom internal engineering analytics and sprint-tracking automation using the Jira REST API.",
+        "Completed the competitive Cerner Velocity Software Engineering Internship prior to transitioning into full-time platform engineering."
       ]
     },
     {
       "name": "University of Missouri",
       "position": "Community Advisor",
-      "startDate": "2011",
-      "endDate": "2014",
-      "summary": "Served as a community leader and advisor during university studies.",
+      "startDate": "Aug 2010",
+      "endDate": "May 2013",
+      "summary": "Served as a student community leader, coordinating residential programming, conflict resolution, and student mentorship.",
       "highlights": []
     }
   ],
@@ -57,51 +83,80 @@
     {
       "institution": "University of Missouri-Columbia",
       "area": "Electrical Engineering",
-      "studyType": "Bachelor's Degree",
+      "studyType": "Bachelor of Science",
       "startDate": "2009",
       "endDate": "2014"
     }
   ],
   "skills": [
     {
-      "name": "Leadership",
-      "keywords": ["Engineering Management", "Team Building", "Strategic Planning", "Cross-functional Coordination"]
+      "name": "Healthcare Interoperability",
+      "keywords": [
+        "FHIR (HL7 R4)",
+        "TEFCA / QHIN",
+        "Carequality",
+        "HL7 v2 & C-CDA",
+        "ONC HTI-1 & HTI-4",
+        "SMART on FHIR",
+        "Master Patient Index (MPI)",
+        "42 CFR Part 2 & CMS-0057-F"
+      ]
     },
     {
-      "name": "Technical",
-      "keywords": ["Node.js", "JavaScript", "HTML", "Ruby", "J2EE", "API Development", "Jira REST API"]
+      "name": "Cloud & Platform Architecture",
+      "keywords": [
+        "CareFabric & CareConnect",
+        "AWS Cloud Architecture",
+        "Apache Kafka (AWS MSK)",
+        "OpenSearch",
+        "Event-Driven Microservices",
+        "Java / Spring Boot",
+        "PostgreSQL & MSSQL",
+        "React, Node.js & Python"
+      ]
+    },
+    {
+      "name": "Leadership & AI Strategy",
+      "keywords": [
+        "Global Engineering Leadership",
+        "Agentic AI & MCP Workflows",
+        "Cloud FinOps Optimization",
+        "Multi-Region BCDR",
+        "DevSecOps Governance",
+        "Executive & Partner Alignment"
+      ]
     }
   ],
   "projects": [
     {
-      "name": "Personal Portfolio Website",
-      "description": "A modern, responsive portfolio site built with React and Vite, featuring automated CI/CD pipelines via GitHub Actions.",
+      "name": "AI-Augmented Engineering & Multi-Agent Workflows",
+      "description": "Designed and rolled out custom multi-agent AI engineering workflows and MCP integrations for automated PR triage, rapid architecture spec discovery, and structured incident-to-coaching handoffs.",
+      "keywords": ["Agentic AI", "MCP", "Python", "AWS", "Developer Velocity"],
+      "url": "#"
+    },
+    {
+      "name": "CareFabric & CareConnect Interoperability Modernization",
+      "description": "Directed the architectural evolution of CareFabric and CareConnect across national healthcare networks (TEFCA/QHIN, Carequality, FHIR R4, HTI-1/HTI-4) and multi-tenant AWS event pipelines.",
+      "keywords": ["CareFabric", "CareConnect", "FHIR R4", "TEFCA/QHIN", "AWS MSK"],
+      "url": "#"
+    },
+    {
+      "name": "Quakers Track Coaches Corner",
+      "description": "Collaborating with Coach Matty Bennett on a dedicated analytics and fantasy draft dashboard for Moses Brown Track & XC, utilizing React, Python/Playwright automation, and GitHub Actions.",
+      "keywords": ["React", "Analytics", "Athletics", "Playwright", "GitHub Actions"],
+      "url": "/#/projects/quakers-track"
+    },
+    {
+      "name": "Personal Portfolio & Interactive Hub",
+      "description": "A modern, responsive portfolio and family web application suite built with React and Vite, featuring automated CI/CD pipelines via GitHub Actions.",
       "keywords": ["React", "Vite", "GitHub Actions", "Bootstrap"],
       "url": "https://github.com/drtootsie/drtootsie.github.io"
     },
     {
       "name": "Clue Investigator Tool",
-      "description": "An advanced logic-based tracking tool for the board game Clue, featuring a custom deduction engine and strategic advice.",
+      "description": "An advanced logic-based tracking tool for the board game Clue, featuring a custom deduction engine and real-time strategic probability analysis.",
       "keywords": ["React", "Logic Engine", "Game Strategy", "Bootstrap"],
       "url": "/#/projects/clue"
-    },
-    {
-      "name": "Kids Corner Games",
-      "description": "A collection of interactive puzzle games designed for children, including memory matches, picture puzzles, and logic games.",
-      "keywords": ["React", "Educational Games", "Kids", "Mobile Friendly"],
-      "url": "/#/projects/kids-corner"
-    },
-    {
-      "name": "Quakers Track Coaches Corner",
-      "description": "Collaborating with Coach Matty Bennett on a dedicated analytics dashboard for Moses Brown Track & XC. Successfully tracked the 2026 Indoor Class B Championship win and currently managing real-time results for the 2026 Outdoor championship season.",
-      "keywords": ["React", "Data Tracking", "Athletics", "Coaching", "Playwright"],
-      "url": "/#/projects/quakers-track"
-    },
-    {
-      "name": "Clinical Platform Modernization",
-      "description": "Led the strategic initiative to modernize legacy clinical systems, improving regulatory compliance and user experience.",
-      "keywords": ["Leadership", "Legacy Modernization", "Healthcare IT"],
-      "url": "#"
     }
   ]
 }
