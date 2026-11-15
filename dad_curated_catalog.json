@@ -1,0 +1,96 @@
+{
+  "curated_crossover_picks": [
+    {
+      "title": "Recursion",
+      "author": "Blake Crouch",
+      "genres": ["sci-fi", "time-travel", "mystery", "crime"],
+      "hook": "NYPD detective Barry Sutton investigates 'False Memory Syndrome'—a phenomenon driving victims mad with memories of lives they never lived—colliding with a neuroscientist who invented a way to replay and alter time.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B07HDSHP7R"
+    },
+    {
+      "title": "Dark Matter",
+      "author": "Blake Crouch",
+      "genres": ["sci-fi", "time-travel", "mystery"],
+      "hook": "A kidnapped physicist wakes up in a world where his life took a completely different path, forcing him to race through the multiverse to return to his family.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B0180T0IUY"
+    },
+    {
+      "title": "The 7 1/2 Deaths of Evelyn Hardcastle",
+      "author": "Stuart Turton",
+      "genres": ["mystery", "time-travel", "crime"],
+      "hook": "Agatha Christie meets Groundhog Day and Quantum Leap: Aiden Bishop must solve a murder at Blackheath Manor by waking up each day in the body of a different guest.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B079439CKX"
+    },
+    {
+      "title": "11/22/63",
+      "author": "Stephen King",
+      "genres": ["time-travel", "mystery", "crime"],
+      "hook": "High school teacher Jake Epping steps through a temporal portal in a diner pantry back to 1958 on a mission to investigate and prevent the JFK assassination.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B004Q7CIFI"
+    },
+    {
+      "title": "The Caves of Steel",
+      "author": "Isaac Asimov",
+      "genres": ["sci-fi", "mystery", "crime"],
+      "hook": "The ultimate sci-fi detective noir: NYPD homicide detective Elijah Baley is partnered with a humanoid robot, R. Daneel Olivaw, to solve a locked-room murder in Spacetown.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B000FC126E"
+    },
+    {
+      "title": "The Gone World",
+      "author": "Tom Sweterlitsch",
+      "genres": ["sci-fi", "time-travel", "crime", "mystery"],
+      "hook": "NCIS special agent Shannon Moss travels into possible futures via deep-space time slip to solve the brutal murder of a Navy SEAL's family and stop an approaching temporal apocalypse.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B071973V63"
+    },
+    {
+      "title": "And Then There Were None",
+      "author": "Agatha Christie",
+      "genres": ["mystery", "crime"],
+      "hook": "Ten strangers with dark secrets are lured to an isolated island off the Devon coast and picked off one by one in the bestselling mystery of all time.",
+      "acquisition": "libby_or_kindle",
+      "asin": "B000FC1R46"
+    },
+    {
+      "title": "The Time Machine",
+      "author": "H.G. Wells",
+      "genres": ["sci-fi", "time-travel", "mystery"],
+      "hook": "The foundational time-travel thriller following a Victorian scientist 800,000 years into the future to unravel the dark mystery of the Eloi and Morlocks.",
+      "acquisition": "drm_free",
+      "epub_url": "https://standardebooks.org/ebooks/h-g-wells/the-time-machine/downloads/h-g-wells_the-time-machine.epub?source=download",
+      "gutenberg_id": 35
+    },
+    {
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "genres": ["mystery", "crime"],
+      "hook": "Twelve iconic detective investigations by Sherlock Holmes and Dr. Watson, remastered in modern typography.",
+      "acquisition": "drm_free",
+      "epub_url": "https://standardebooks.org/ebooks/arthur-conan-doyle/the-adventures-of-sherlock-holmes/downloads/arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub?source=download",
+      "gutenberg_id": 1661
+    },
+    {
+      "title": "The Mysterious Affair at Styles",
+      "author": "Agatha Christie",
+      "genres": ["mystery", "crime"],
+      "hook": "Hercule Poirot's debut murder investigation—a locked-room poisoning at a country manor full of red herrings.",
+      "acquisition": "drm_free",
+      "epub_url": "https://standardebooks.org/ebooks/agatha-christie/the-mysterious-affair-at-styles/downloads/agatha-christie_the-mysterious-affair-at-styles.epub?source=download",
+      "gutenberg_id": 863
+    },
+    {
+      "title": "Short Science Fiction Collection (Minority Report / Second Variety)",
+      "author": "Philip K. Dick",
+      "genres": ["sci-fi", "time-travel", "crime", "mystery"],
+      "hook": "Mind-bending sci-fi crime and temporal paranoia tales from the master of speculative noir.",
+      "acquisition": "drm_free",
+      "epub_url": "https://www.gutenberg.org/ebooks/28698.epub3.images",
+      "gutenberg_id": 28698
+    }
+  ]
+}
